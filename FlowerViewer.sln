@@ -1,0 +1,59 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlowerViewer", "FlowerViewer\FlowerViewer.csproj", "{2E3B48CB-12A7-4F73-9E4F-93D4C313A8F2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MetroRadiance", "MetroRadiance", "{C060586D-38D6-4038-90C5-304E24409B82}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MetroRadiance.Chrome", "MetroRadiance\MetroRadiance.Chrome\MetroRadiance.Chrome.csproj", "{21B4AD15-D9FA-4873-BFAD-1EEEFBC6C264}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MetroRadiance.Core", "MetroRadiance\MetroRadiance.Core\MetroRadiance.Core.csproj", "{A6B0A741-5BE0-479D-B813-E65672350057}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MetroRadiance", "MetroRadiance\MetroRadiance\MetroRadiance.csproj", "{0AF0B9FF-D981-4D0F-A41F-C3AB6FE2F16D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2E3B48CB-12A7-4F73-9E4F-93D4C313A8F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E3B48CB-12A7-4F73-9E4F-93D4C313A8F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E3B48CB-12A7-4F73-9E4F-93D4C313A8F2}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{2E3B48CB-12A7-4F73-9E4F-93D4C313A8F2}.Debug|x86.Build.0 = Debug|Any CPU
+		{2E3B48CB-12A7-4F73-9E4F-93D4C313A8F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E3B48CB-12A7-4F73-9E4F-93D4C313A8F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E3B48CB-12A7-4F73-9E4F-93D4C313A8F2}.Release|x86.ActiveCfg = Release|Any CPU
+		{2E3B48CB-12A7-4F73-9E4F-93D4C313A8F2}.Release|x86.Build.0 = Release|Any CPU
+		{21B4AD15-D9FA-4873-BFAD-1EEEFBC6C264}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21B4AD15-D9FA-4873-BFAD-1EEEFBC6C264}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21B4AD15-D9FA-4873-BFAD-1EEEFBC6C264}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{21B4AD15-D9FA-4873-BFAD-1EEEFBC6C264}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21B4AD15-D9FA-4873-BFAD-1EEEFBC6C264}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21B4AD15-D9FA-4873-BFAD-1EEEFBC6C264}.Release|x86.ActiveCfg = Release|Any CPU
+		{A6B0A741-5BE0-479D-B813-E65672350057}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6B0A741-5BE0-479D-B813-E65672350057}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6B0A741-5BE0-479D-B813-E65672350057}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{A6B0A741-5BE0-479D-B813-E65672350057}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6B0A741-5BE0-479D-B813-E65672350057}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6B0A741-5BE0-479D-B813-E65672350057}.Release|x86.ActiveCfg = Release|Any CPU
+		{0AF0B9FF-D981-4D0F-A41F-C3AB6FE2F16D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0AF0B9FF-D981-4D0F-A41F-C3AB6FE2F16D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0AF0B9FF-D981-4D0F-A41F-C3AB6FE2F16D}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{0AF0B9FF-D981-4D0F-A41F-C3AB6FE2F16D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0AF0B9FF-D981-4D0F-A41F-C3AB6FE2F16D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0AF0B9FF-D981-4D0F-A41F-C3AB6FE2F16D}.Release|x86.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{21B4AD15-D9FA-4873-BFAD-1EEEFBC6C264} = {C060586D-38D6-4038-90C5-304E24409B82}
+		{A6B0A741-5BE0-479D-B813-E65672350057} = {C060586D-38D6-4038-90C5-304E24409B82}
+		{0AF0B9FF-D981-4D0F-A41F-C3AB6FE2F16D} = {C060586D-38D6-4038-90C5-304E24409B82}
+	EndGlobalSection
+EndGlobal

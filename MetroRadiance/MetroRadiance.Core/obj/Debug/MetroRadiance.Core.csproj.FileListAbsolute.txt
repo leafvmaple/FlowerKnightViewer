@@ -1,0 +1,6 @@
+D:\OpenSource\KanColleViewer\MetroRadiance\MetroRadiance.Core\bin\Debug\MetroRadiance.Core.dll
+D:\OpenSource\KanColleViewer\MetroRadiance\MetroRadiance.Core\bin\Debug\MetroRadiance.Core.pdb
+D:\OpenSource\KanColleViewer\MetroRadiance\MetroRadiance.Core\obj\Debug\MetroRadiance.Core.Properties.Resources.resources
+D:\OpenSource\KanColleViewer\MetroRadiance\MetroRadiance.Core\obj\Debug\MetroRadiance.Core.csproj.GenerateResource.Cache
+D:\OpenSource\KanColleViewer\MetroRadiance\MetroRadiance.Core\obj\Debug\MetroRadiance.Core.dll
+D:\OpenSource\KanColleViewer\MetroRadiance\MetroRadiance.Core\obj\Debug\MetroRadiance.Core.pdb
