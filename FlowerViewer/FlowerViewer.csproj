@@ -70,12 +70,20 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Models\Helper.cs" />
+    <Compile Include="Models\INavigator.cs" />
+    <Compile Include="Models\ProxySettings.cs" />
     <Compile Include="Models\Settings.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
+    <Compile Include="ViewModels\NavigatorViewModel.cs" />
+    <Compile Include="ViewModels\WindowViewModel.cs" />
+    <Compile Include="Views\Behaviors\NavigatorBehavior.cs" />
+    <Compile Include="Views\BrowserNavigator.xaml.cs">
+      <DependentUpon>BrowserNavigator.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Win32\INTERNET_CACHE_ENTRY_INFOA.cs" />
     <Compile Include="Win32\NativeMethods.cs" />
     <Compile Include="Win32\WinInet.cs" />
-    <Page Include="MainWindow.xaml">
+    <Page Include="Views\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -83,10 +91,18 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
+    <Compile Include="Views\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\BrowserNavigator.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\ProductInfo.cs.cs" />
@@ -116,7 +132,28 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Desktop.Metro\Desktop.Metro.csproj">
+      <Project>{f00fc570-2a80-4f61-8364-798cd44514b2}</Project>
+      <Name>Desktop.Metro</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FlowerWrapper\FlowerWrapper.csproj">
+      <Project>{7a3b76ca-37aa-4267-9aa0-c0faadeb7038}</Project>
+      <Name>FlowerWrapper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MetroRadiance\MetroRadiance.Chrome\MetroRadiance.Chrome.csproj">
+      <Project>{21b4ad15-d9fa-4873-bfad-1eeefbc6c264}</Project>
+      <Name>MetroRadiance.Chrome</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MetroRadiance\MetroRadiance.Core\MetroRadiance.Core.csproj">
+      <Project>{a6b0a741-5be0-479d-b813-e65672350057}</Project>
+      <Name>MetroRadiance.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MetroRadiance\MetroRadiance\MetroRadiance.csproj">
+      <Project>{0af0b9ff-d981-4d0f-a41f-c3ab6fe2f16d}</Project>
+      <Name>MetroRadiance</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

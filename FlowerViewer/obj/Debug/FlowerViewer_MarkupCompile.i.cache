@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\OpenSource\FlowerViewer\FlowerViewer\obj\Debug\
+D:\OpenResource\FlowerViewer\FlowerViewer\obj\Debug\
 FlowerViewer
 none
 false
 DEBUG;TRACE
-D:\OpenSource\FlowerViewer\FlowerViewer\App.xaml
-11151548125
+D:\OpenResource\FlowerViewer\FlowerViewer\App.xaml
+3-45953264
 
-16-922305171
-171589498057
-MainWindow.xaml;
+22-107915663
+22-1988867193
+Views\MainWindow.xaml;Themes\Generic.xaml;Views\BrowserNavigator.xaml;
 
 True
 

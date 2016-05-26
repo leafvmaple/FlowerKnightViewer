@@ -1,0 +1,17 @@
+D:\OpenResource\FlowerViewer\FlowerWrapper\obj\Debug\FlowerWrapper.csprojResolveAssemblyReference.cache
+D:\OpenResource\FlowerViewer\FlowerWrapper\bin\Debug\FlowerWrapper.dll
+D:\OpenResource\FlowerViewer\FlowerWrapper\bin\Debug\FlowerWrapper.pdb
+D:\OpenResource\FlowerViewer\FlowerWrapper\bin\Debug\FiddlerCore4.dll
+D:\OpenResource\FlowerViewer\FlowerWrapper\bin\Debug\Livet.dll
+D:\OpenResource\FlowerViewer\FlowerWrapper\bin\Debug\System.Reactive.Core.dll
+D:\OpenResource\FlowerViewer\FlowerWrapper\bin\Debug\System.Reactive.Interfaces.dll
+D:\OpenResource\FlowerViewer\FlowerWrapper\bin\Debug\System.Reactive.Linq.dll
+D:\OpenResource\FlowerViewer\FlowerWrapper\bin\Debug\System.Windows.Interactivity.dll
+D:\OpenResource\FlowerViewer\FlowerWrapper\bin\Debug\Microsoft.Expression.Interactions.dll
+D:\OpenResource\FlowerViewer\FlowerWrapper\bin\Debug\FiddlerCore4.xml
+D:\OpenResource\FlowerViewer\FlowerWrapper\bin\Debug\Livet.xml
+D:\OpenResource\FlowerViewer\FlowerWrapper\bin\Debug\System.Reactive.Core.xml
+D:\OpenResource\FlowerViewer\FlowerWrapper\bin\Debug\System.Reactive.Interfaces.xml
+D:\OpenResource\FlowerViewer\FlowerWrapper\bin\Debug\System.Reactive.Linq.xml
+D:\OpenResource\FlowerViewer\FlowerWrapper\obj\Debug\FlowerWrapper.dll
+D:\OpenResource\FlowerViewer\FlowerWrapper\obj\Debug\FlowerWrapper.pdb

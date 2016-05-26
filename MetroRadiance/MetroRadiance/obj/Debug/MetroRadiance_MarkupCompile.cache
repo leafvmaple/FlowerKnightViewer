@@ -4,7 +4,7 @@
 library
 C#
 .cs
-D:\OpenSource\KanColleViewer\MetroRadiance\MetroRadiance\obj\Debug\
+D:\OpenResource\FlowerViewer\MetroRadiance\MetroRadiance\obj\Debug\
 MetroRadiance
 none
 false
@@ -13,7 +13,7 @@ DEBUG;TRACE
 30945295830
 
 251648075843
-16722579726
+161408817446
 Styles\Colors.xaml;Styles\Controls.Button.xaml;Styles\Controls.CheckBox.xaml;Styles\Controls.Expander.xaml;Styles\Controls.PasswordBox.xaml;Styles\Controls.ScrollBar.xaml;Styles\Controls.ToggleButton.xaml;Styles\Controls.Tooltip.xaml;Styles\Controls.xaml;Styles\Icons.xaml;Themes\Accents\Blue.xaml;Themes\Accents\Orange.xaml;Themes\Accents\Purple.xaml;Themes\Dark.xaml;Themes\Generic.Badge.xaml;Themes\Generic.BindableRichTextBox.xaml;Themes\Generic.CaptionButton.xaml;Themes\Generic.CaptionIcon.xaml;Themes\Generic.ExpanderButton.xaml;Themes\Generic.LinkButton.xaml;Themes\Generic.MetroWindow.xaml;Themes\Generic.PromptComboBox.xaml;Themes\Generic.PromptTextBox.xaml;Themes\Generic.ResizeGrip.xaml;Themes\Generic.SystemButtons.xaml;Themes\Generic.TabView.xaml;Themes\Generic.xaml;Themes\Light.xaml;Styles\Controls.FocusVisualStyle.xaml;Styles\Controls.RadioButton.xaml;
 
 False

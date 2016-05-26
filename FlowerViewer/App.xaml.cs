@@ -6,9 +6,13 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 using FlowerViewer.Models;
+using FlowerViewer.Views;
 using FlowerViewer.ViewModels;
 using System.Diagnostics;
 using System.IO;
+using FlowerWrapper;
+using AppSettings = FlowerViewer.Properties.Settings;
+using Settings = FlowerViewer.Models.Settings;
 
 namespace FlowerViewer
 {
@@ -31,6 +35,10 @@ namespace FlowerViewer
             base.OnStartup(e);
 
             this.DispatcherUnhandledException += (sender, args) => ReportException(sender, args.Exception);
+
+            Settings.Load();
+            FlowerClient.Current.Proxy.Startup(AppSettings.Default.LocalProxyPort);
+            FlowerClient.Current.Proxy.UpstreamProxySettings = Settings.Current.ProxySettings;
 
             //DispatcherHelper.UIDispatcher = this.Dispatcher;
             ProductInfo = new ProductInfo();

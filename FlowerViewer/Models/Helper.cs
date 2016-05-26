@@ -25,12 +25,12 @@ namespace FlowerViewer.Models
 
 
         /// <summary>
-        /// Windows 8 またはそれ以降のバージョンで動作しているかどうかを確認します。
+        /// Windows 8 版本确认。
         /// </summary>
         public static bool IsWindows8OrGreater { get; private set; }
 
         /// <summary>
-        /// デザイナーのコンテキストで実行されているかどうかを取得します。
+        /// 确定是否是设计模式。
         /// </summary>
         public static bool IsInDesignMode
         {
@@ -57,7 +57,7 @@ namespace FlowerViewer.Models
 
         /// <summary>
         /// HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main\FeatureControl\FEATURE_BROWSER_EMULATION
-        /// に WebBrowser コントロールの動作バージョンを設定します。
+        /// に WebBrowser 设置注册表让程序使用特定IE打开。
         /// </summary>
         public static void SetRegistryFeatureBrowserEmulation()
         {
@@ -86,7 +86,7 @@ namespace FlowerViewer.Models
 
 
         /// <summary>
-        /// キャッシュを削除します。
+        /// 清楚IE缓存。
         /// </summary>
         /// <seealso cref="http://support.microsoft.com/kb/326201/ja"/>
         public static Task<bool> DeleteInternetCache()
@@ -153,11 +153,8 @@ namespace FlowerViewer.Models
 
 
         /// <summary>
-        /// 指定した文字列を暗号化します。
+        /// 指定字符串编码。
         /// </summary>
-        /// <param name="source">暗号化する文字列。</param>
-        /// <param name="password">暗号化に使用するパスワード。</param>
-        /// <returns>暗号化された文字列。</returns>
         public static string EncryptString(string source, string password)
         {
             using (var rijndael = new RijndaelManaged())
@@ -177,11 +174,8 @@ namespace FlowerViewer.Models
         }
 
         /// <summary>
-        /// 指定された文字列を複合化します。
+        /// 指定字符串解码。
         /// </summary>
-        /// <param name="source">暗号化された文字列。</param>
-        /// <param name="password">暗号化に使用したパスワード。</param>
-        /// <returns>復号化された文字列。</returns>
         public static string DecryptString(string source, string password)
         {
             try

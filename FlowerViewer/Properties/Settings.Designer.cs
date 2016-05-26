@@ -34,7 +34,7 @@ namespace FlowerViewer.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://www.dmm.com/netgame/social/application/-/detail/=/app_id=854854/")]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://www.dmm.co.jp/netgame/social/-/gadgets/=/app_id=329993/")]
         public global::System.Uri FlowerUrl {
             get {
                 return ((global::System.Uri)(this["FlowerUrl"]));
