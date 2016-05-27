@@ -11,3 +11,10 @@ D:\OpenResource\FlowerViewer\MetroRadiance\MetroRadiance.Core\obj\Debug\MetroRad
 D:\OpenResource\FlowerViewer\MetroRadiance\MetroRadiance.Core\obj\Debug\MetroRadiance.Core.csproj.GenerateResource.Cache
 D:\OpenResource\FlowerViewer\MetroRadiance\MetroRadiance.Core\obj\Debug\MetroRadiance.Core.dll
 D:\OpenResource\FlowerViewer\MetroRadiance\MetroRadiance.Core\obj\Debug\MetroRadiance.Core.pdb
+D:\OpenSource\FlowerViewer\MetroRadiance\MetroRadiance.Core\bin\Debug\MetroRadiance.Core.dll
+D:\OpenSource\FlowerViewer\MetroRadiance\MetroRadiance.Core\bin\Debug\MetroRadiance.Core.pdb
+D:\OpenSource\FlowerViewer\MetroRadiance\MetroRadiance.Core\obj\Debug\MetroRadiance.Core.csprojResolveAssemblyReference.cache
+D:\OpenSource\FlowerViewer\MetroRadiance\MetroRadiance.Core\obj\Debug\MetroRadiance.Core.Properties.Resources.resources
+D:\OpenSource\FlowerViewer\MetroRadiance\MetroRadiance.Core\obj\Debug\MetroRadiance.Core.csproj.GenerateResource.Cache
+D:\OpenSource\FlowerViewer\MetroRadiance\MetroRadiance.Core\obj\Debug\MetroRadiance.Core.dll
+D:\OpenSource\FlowerViewer\MetroRadiance\MetroRadiance.Core\obj\Debug\MetroRadiance.Core.pdb

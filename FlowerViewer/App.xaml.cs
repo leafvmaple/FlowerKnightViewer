@@ -36,6 +36,9 @@ namespace FlowerViewer
 
             this.DispatcherUnhandledException += (sender, args) => ReportException(sender, args.Exception);
 
+            Helper.SetRegistryFeatureBrowserEmulation();
+            Helper.SetMMCSSTask();
+
             Settings.Load();
             FlowerClient.Current.Proxy.Startup(AppSettings.Default.LocalProxyPort);
             FlowerClient.Current.Proxy.UpstreamProxySettings = Settings.Current.ProxySettings;

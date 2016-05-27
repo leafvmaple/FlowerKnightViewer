@@ -47,6 +47,8 @@
     <Reference Include="System.Reactive.Linq">
       <HintPath>..\Packages\Rx-Linq.2.2.5\lib\net45\System.Reactive.Linq.dll</HintPath>
     </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -56,11 +58,28 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FlowerProxy.cs" />
+    <Compile Include="FlowerProxy.Endpoints.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FlowerProxy.Endpoints.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FlowerProxyExtensions.cs" />
     <Compile Include="Interface\IProxySettings.cs" />
-    <Compile Include="KanColleClient.cs" />
+    <Compile Include="FlowerClient.cs" />
+    <Compile Include="Internal\Extensions.cs" />
+    <Compile Include="Models\Raw\fkapi_login.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Win32\INTERNET_PROXY_INFO.cs" />
     <Compile Include="Win32\NativeMethods.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="FlowerProxy.Endpoints.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>FlowerProxy.Endpoints.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

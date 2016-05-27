@@ -1,0 +1,54 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="System.Threading.Tasks" #>
+<#@ output extension=".cs" #>
+<#
+	var endpoints = new[]
+	{
+		"/api/v1/user/login",
+		"/api/v1/master/getMaster",
+		"/api/v1/config/getNews",
+		"/api/v1/friend/getFriendAcceptList",
+		"/api/v1/present/getPresentBoxList",
+	};
+#>
+// 
+// 该文件由 "FlowerProxy.Endpoints.tt" 生成
+// 
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Reactive.Linq;
+using System.Threading.Tasks;
+using Fiddler;
+
+namespace FlowerWrapper
+{
+	partial class FlowerProxy
+	{
+<#
+	foreach (var endpoint in endpoints)
+	{	
+		var names = endpoint
+			.Replace("/api/v1/", "")
+			.Split(new [] { '/' }, StringSplitOptions.RemoveEmptyEntries)
+			.Distinct();
+
+		var name = "api_" + string.Join("_", names);
+#>
+		/// <summary>
+		/// Endpoint "<#= endpoint #>" 传输协议
+		/// </summary>
+		public IObservable<Session> <#= name #>
+		{
+			get { return this.ApiSessionSource.Where(x => x.PathAndQuery == "<#= endpoint #>"); }
+		}
+
+<#
+	}
+#>
+	}
+}

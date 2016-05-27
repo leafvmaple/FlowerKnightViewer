@@ -14,11 +14,16 @@ using System.Diagnostics;
 
 namespace FlowerWrapper
 {
-    public class FlowerProxy
+    public partial class FlowerProxy
     {
         private readonly IConnectableObservable<Session> connectableSessionSource;
         private readonly IConnectableObservable<Session> apiSource;
         private readonly LivetCompositeDisposable compositeDisposable;
+
+        public IObservable<Session> ApiSessionSource
+        {
+            get { return this.apiSource.AsObservable(); }
+        }
 
         public IProxySettings UpstreamProxySettings { get; set; }
 
