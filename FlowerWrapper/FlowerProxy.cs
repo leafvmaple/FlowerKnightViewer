@@ -11,6 +11,8 @@ using System.Threading.Tasks;
 using Livet;
 using FlowerWrapper.Interface;
 using System.Diagnostics;
+using System.Runtime.Serialization.Json;
+using System.IO;
 
 namespace FlowerWrapper
 {
@@ -105,6 +107,16 @@ namespace FlowerWrapper
         {
             // 「http://www.dmm.com:433/」の場合もあり、これは Session.isHTTPS では判定できない
             return session.isHTTPS || session.fullUrl.StartsWith("https:") || session.fullUrl.Contains(":443");
+        }
+        public static bool Parse<T>(Session session, out T result) where T : class
+        {
+            var bytes = Encoding.UTF8.GetBytes(session.GetResponseBodyAsString());
+            var serializer = new DataContractJsonSerializer(typeof(T));
+            using (var stream = new MemoryStream(bytes))
+            {
+                result = serializer.ReadObject(stream) as T;
+                return true;
+            }
         }
     }
 }

@@ -4,7 +4,7 @@
 library
 C#
 .cs
-D:\OpenSource\FlowerViewer\MetroRadiance\MetroRadiance.Chrome\obj\Debug\
+D:\OpenResource\FlowerViewer\MetroRadiance\MetroRadiance.Chrome\obj\Debug\
 MetroRadiance.Chrome
 none
 false
@@ -13,7 +13,7 @@ DEBUG;TRACE
 2-243799101
 
 11-335693797
-151823272816
+15-2001629909
 Themes\Generic.xaml;Themes\Generic.GlowWindow.xaml;
 
 False

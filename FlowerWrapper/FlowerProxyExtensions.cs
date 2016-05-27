@@ -45,6 +45,7 @@ namespace FlowerWrapper
         public static T Parse<T>(Session session) where T : class
         {
             var bytes = Encoding.UTF8.GetBytes(session.GetResponseBodyAsString());
+            Debug.WriteLine(bytes);
             var serializer = new DataContractJsonSerializer(typeof(T));
             using (var stream = new MemoryStream(bytes))
             {

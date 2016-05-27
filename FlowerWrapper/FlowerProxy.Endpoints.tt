@@ -13,6 +13,20 @@
 		"/api/v1/config/getNews",
 		"/api/v1/friend/getFriendAcceptList",
 		"/api/v1/present/getPresentBoxList",
+		"/api/v1/friend/getFriendList",
+		"/api/v1/raidBoss/getRaidBossList",
+		"/api/v1/character/getBook",
+		"/api/v1/character/saveParty",
+		"/api/v1/dungeon/getEventDungeonList",
+		"/api/v1/dungeon/getEncounterDungeonList",
+		"/api/v1/story/getStoryList",
+		"/api/v1/event/getEventDetail",
+		"/api/v1/gacha/getGachaSchedule",
+		"/api/v1/boxGacha/getBoxGachaSchedule",
+		"/api/v1/exchange/getExchangeList",
+		"/api/v1/campaignSerial/getCampaignSerialSchedule",
+		"/api/v1/character/getBook",
+		"/api/v1/mission/setPanelMissionStatus",
 	};
 #>
 // 

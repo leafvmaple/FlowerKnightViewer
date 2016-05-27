@@ -4,7 +4,7 @@
 library
 C#
 .cs
-D:\OpenSource\FlowerViewer\Desktop.Metro\obj\Debug\
+D:\OpenResource\FlowerViewer\Desktop.Metro\obj\Debug\
 Grabacr07.Desktop.Metro
 none
 false
@@ -13,7 +13,7 @@ DEBUG;TRACE
 71354015083
 
 15-1593683397
-18-1124946367
+18183959265
 Styles\Controls.FlatSlider.xaml;Styles\Controls.xaml;Themes\Generic.CallMethodButton.xaml;Styles\Controls.MetroDialog.xaml;Themes\Generic.SortButton.xaml;Themes\Generic.TabHeader.xaml;Themes\Generic.xaml;
 
 True

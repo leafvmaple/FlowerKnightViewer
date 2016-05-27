@@ -1,6 +1,7 @@
 ﻿using FlowerWrapper.Models.Raw;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Reactive.Linq;
 using System.Reactive.Threading.Tasks;
@@ -25,10 +26,19 @@ namespace FlowerWrapper
 
         public void Initialieze()
         {
-            if (this.Proxy == null)
-                this.Proxy = new FlowerProxy();
+            var proxy = this.Proxy ?? (this.Proxy = new FlowerProxy());
 
-            var login = this.Proxy.api_user_login.TryParse<fkapi_login>().FirstAsync().ToTask();
+            var login = Proxy.api_user_login.TryParse<fkapi_login>().FirstAsync().ToTask();
+
+            Proxy.api_user_login.FirstAsync().Subscribe(async session =>
+            {
+                var loginData = await login;
+
+                fkapi_login loginData1;
+                if (!FlowerProxy.Parse(session, out loginData1)) return;
+
+                Debug.WriteLine(loginData);
+            });
         }
 
         /// <summary>
