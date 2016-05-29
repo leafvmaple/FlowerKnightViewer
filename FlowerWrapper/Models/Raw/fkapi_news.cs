@@ -2,6 +2,7 @@ using System;
 
 namespace FlowerWrapper.Models.Raw
 {
+	//fkapi_news news;
 	public class fkapi_news
 	{
 		public fkapi_masterNewsList[] masterNewsList { get; set; }
@@ -15,7 +16,7 @@ namespace FlowerWrapper.Models.Raw
 		public string url { get; set; }
 		public string startDate { get; set; }
 		public string endDate { get; set; }
-		public long orderNum { get; set; }
-		public long id { get; set; }
+		public int orderNum { get; set; }
+		public int id { get; set; }
 	}
 }

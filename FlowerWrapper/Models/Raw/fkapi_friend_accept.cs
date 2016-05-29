@@ -2,6 +2,7 @@ using System;
 
 namespace FlowerWrapper.Models.Raw
 {
+	//fkapi_friend_accept friend_accept;
 	public class fkapi_friend_accept
 	{
 		public fkapi_userFriendInformationList[] userFriendInformationList { get; set; }

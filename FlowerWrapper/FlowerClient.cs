@@ -1,20 +1,21 @@
 ﻿using FlowerWrapper.Internal;
 using FlowerWrapper.Models.Raw;
+using Livet;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Reactive.Linq;
 using System.Reactive.Threading.Tasks;
+using FlowerWrapper.Models;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace FlowerWrapper
 {
-    public class FlowerClient
+    public class FlowerClient : NotificationObject
     {
         private static FlowerClient _Current = new FlowerClient();
-
         public static FlowerClient Current
         {
             get { return _Current; }
@@ -25,36 +26,35 @@ namespace FlowerWrapper
             this.Initialieze();
         }
 
-        public Knight Knight { get; set; }
+        public Garden Garden { get; set; }
 
         public Friend Friend { get; set; }
 
         public void Initialieze()
         {
             if (Proxy == null) Proxy = new FlowerProxy();
+            if (Garden == null) Garden = new Garden();
+            if (Friend == null) Friend = new Friend();
 
-            var social = Proxy.dmm_social_rpc.TryParse<dmm_source_rpc>().FirstAsync().ToTask();
-            var news  = Proxy.api_config_getNews.TryParse<fkapi_news>().FirstAsync().ToTask();
-            var friends = this.Proxy.api_friend_getFriendList.TryParse<fkapi_friend>().FirstAsync().ToTask();
-            var raidBoss = this.Proxy.api_raidBoss_getRaidBossList.TryParse<fkapi_raid_boss>().FirstAsync().ToTask();
-            var friendApt = this.Proxy.api_friend_getFriendAcceptList.TryParse<fkapi_friend_accept>().FirstAsync().ToTask();
+            // 在Dmm中同步昵称
+            Proxy.dmm_social_rpc.TryParse<dmm_source_rpc[]>().Subscribe(x => Garden.UpdateGarden(x));
 
             var login = Proxy.api_user_login.TryParse<fkapi_login>().FirstAsync().ToTask();
+            var news = Proxy.api_config_getNews.TryParse<fkapi_news>().FirstAsync().ToTask();
+            var raidBoss = this.Proxy.api_raidBoss_getRaidBossList.TryParse<fkapi_raid_boss>().FirstAsync().ToTask();
+            var friends = this.Proxy.api_friend_getFriendList.TryParse<fkapi_friend>().FirstAsync().ToTask();
+            var friendApt = this.Proxy.api_friend_getFriendAcceptList.TryParse<fkapi_friend_accept>().FirstAsync().ToTask();
 
             Proxy.api_user_login.FirstAsync().Subscribe(async session =>
             {
                 var timeout = Task.Delay(TimeSpan.FromSeconds(20));
 
                 // 当所有任务都已经完成，或者已经延时已经到.
-                var bCanInitialize = await Task.WhenAny(new Task[] { news, raidBoss, friendApt }.WhenAll(), timeout) != timeout;
-
-                if (Knight == null) Knight = new Knight();
-                if (Friend == null) Friend = new Friend();
+                var bCanInitialize = await Task.WhenAny(new Task[] { news, raidBoss, friends, friendApt }.WhenAll(), timeout) != timeout;
 
                 if (bCanInitialize)
                 {
-                    Knight.UpdateKnight(await login);
-                    Knight.UpdateName(await social);
+                    Garden.UpdateGarden(await login);
 
                     Friend.UpdateFriend(await friends);
                     Friend.UpdateFriendAccept(await friendApt);
@@ -66,5 +66,49 @@ namespace FlowerWrapper
         /// 美少女花骑士通信代理。
         /// </summary>
         public FlowerProxy Proxy { get; private set; }
+
+        #region IsStarted 変更通知
+
+        private bool _IsStarted;
+
+        /// <summary>
+        /// 美少女花骑士是否启动。
+        /// </summary>
+        public bool IsStarted
+        {
+            get { return this._IsStarted; }
+            set
+            {
+                if (this._IsStarted != value)
+                {
+                    this._IsStarted = value;
+                    this.RaisePropertyChanged();
+                }
+            }
+        }
+
+        #endregion
+
+        #region IsInSortie 変更通知
+
+        private bool _IsInSortie;
+
+        /// <summary>
+        /// 是否出击中。
+        /// </summary>
+        public bool IsInSortie
+        {
+            get { return this._IsInSortie; }
+            private set
+            {
+                if (this._IsInSortie != value)
+                {
+                    this._IsInSortie = value;
+                    this.RaisePropertyChanged();
+                }
+            }
+        }
+
+        #endregion
     }
 }

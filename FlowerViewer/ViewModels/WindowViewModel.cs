@@ -249,7 +249,6 @@ namespace FlowerViewer.ViewModels
 
         #endregion
 
-
         public virtual void Initialize() { }
     }
 }

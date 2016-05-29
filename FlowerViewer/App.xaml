@@ -5,6 +5,14 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="pack://application:,,,/MetroRadiance;component/Styles/Controls.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MetroRadiance;component/Styles/Icons.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MetroRadiance;component/Themes/Dark.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MetroRadiance;component/Themes/Accents/Purple.xaml" />
+
+                <ResourceDictionary Source="pack://application:,,,/Desktop.Metro;component/Styles/Controls.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/FlowerViewer;component/Styles/Controls.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/FlowerViewer;component/Styles/Controls.HorizontalFlatListBox.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/FlowerViewer;component/Styles/Controls.Text.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

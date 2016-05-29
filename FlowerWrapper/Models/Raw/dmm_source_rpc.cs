@@ -2,7 +2,8 @@ using System;
 
 namespace FlowerWrapper.Models.Raw
 {
-	public class dmm_source_rpc
+    //dmm_source_rpc[] source_rpc;
+    public class dmm_source_rpc
 	{
 		public string id { get; set; }
 		public fkapi_data data { get; set; }

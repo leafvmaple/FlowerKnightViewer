@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using FlowerWrapper.Models.Raw;
 
-namespace FlowerWrapper
+namespace FlowerWrapper.Models
 {
     public class Friend
     {

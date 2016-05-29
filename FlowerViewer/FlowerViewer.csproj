@@ -71,18 +71,50 @@
     </ApplicationDefinition>
     <Compile Include="Models\Helper.cs" />
     <Compile Include="Models\INavigator.cs" />
+    <Compile Include="Models\Model.cs" />
     <Compile Include="Models\ProxySettings.cs" />
     <Compile Include="Models\Settings.cs" />
+    <Compile Include="ViewModels\KnightViewModel.cs" />
+    <Compile Include="ViewModels\MainContentViewModel.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
     <Compile Include="ViewModels\NavigatorViewModel.cs" />
+    <Compile Include="ViewModels\StartContentViewModel.cs" />
     <Compile Include="ViewModels\WindowViewModel.cs" />
     <Compile Include="Views\Behaviors\NavigatorBehavior.cs" />
     <Compile Include="Views\BrowserNavigator.xaml.cs">
       <DependentUpon>BrowserNavigator.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Contents\Garden.xaml.cs">
+      <DependentUpon>Garden.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MainContent.xaml.cs">
+      <DependentUpon>MainContent.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Win32\INTERNET_CACHE_ENTRY_INFOA.cs" />
     <Compile Include="Win32\NativeMethods.cs" />
     <Compile Include="Win32\WinInet.cs" />
+    <Page Include="Styles\Controls.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\Controls.HorizontalFlatListBox.xaml">
+      <SubType>Designer</SubType>
+      <DependentUpon>Controls.xaml</DependentUpon>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\Controls.Text.xaml">
+      <SubType>Designer</SubType>
+      <DependentUpon>Controls.xaml</DependentUpon>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Contents\Garden.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MainContent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -153,6 +185,9 @@
       <Project>{0af0b9ff-d981-4d0f-a41f-c3ab6fe2f16d}</Project>
       <Name>MetroRadiance</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\Controls\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

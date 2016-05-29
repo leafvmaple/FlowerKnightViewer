@@ -7,6 +7,7 @@
         xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
         xmlns:properties="clr-namespace:FlowerViewer.Properties"
         xmlns:behaviors="clr-namespace:FlowerViewer.Views.Behaviors"
+        xmlns:viewModels="clr-namespace:FlowerViewer.ViewModels"
         xmlns:views="clr-namespace:FlowerViewer.Views"
         mc:Ignorable="d"
         Title="{Binding Title}"
@@ -23,6 +24,11 @@
 									VerticalAlignment="Top" />
         </Border>
         <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="600" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
             <WebBrowser>
                 <i:Interaction.Behaviors>
                     <behaviors:NavigatorBehavior Navigator="{Binding Navigator}" />
@@ -36,6 +42,7 @@
                     </livet:InteractionMessageTrigger>
                 </i:Interaction.Triggers>
             </WebBrowser>
+            <views:MainContent Grid.Row="1"/>
         </Grid>
     </Grid>
 </Window>

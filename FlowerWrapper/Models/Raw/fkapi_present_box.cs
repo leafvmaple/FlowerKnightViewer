@@ -2,6 +2,7 @@ using System;
 
 namespace FlowerWrapper.Models.Raw
 {
+	//fkapi_present_box present_box;
 	public class fkapi_present_box
 	{
 		public fkapi_userMailList[] userMailList { get; set; }
@@ -29,3 +30,4 @@ namespace FlowerWrapper.Models.Raw
 		public string receivedDate { get; set; }
 		public string limitDate { get; set; }
 	}
+}

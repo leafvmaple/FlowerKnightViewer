@@ -2,6 +2,7 @@ using System;
 
 namespace FlowerWrapper.Models.Raw
 {
+	//fkapi_book book;
 	public class fkapi_book
 	{
 		public fkapi_userCharacterBookList[] userCharacterBookList { get; set; }

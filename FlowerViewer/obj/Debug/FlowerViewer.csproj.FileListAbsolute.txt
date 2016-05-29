@@ -88,3 +88,10 @@ D:\OpenSource\FlowerViewer\FlowerViewer\bin\Debug\System.Reactive.Interfaces.xml
 D:\OpenSource\FlowerViewer\FlowerViewer\bin\Debug\FiddlerCore4.xml
 D:\OpenSource\FlowerViewer\FlowerViewer\bin\Debug\System.Reactive.Linq.xml
 D:\OpenSource\FlowerViewer\FlowerViewer\bin\Debug\System.Reactive.Core.xml
+D:\OpenResource\FlowerViewer\FlowerViewer\obj\Debug\Views\Contents\Garden.g.cs
+D:\OpenResource\FlowerViewer\FlowerViewer\obj\Debug\Views\MainContent.g.cs
+D:\OpenResource\FlowerViewer\FlowerViewer\obj\Debug\Views\Contents\Garden.baml
+D:\OpenResource\FlowerViewer\FlowerViewer\obj\Debug\Views\MainContent.baml
+D:\OpenResource\FlowerViewer\FlowerViewer\obj\Debug\Styles\Controls.baml
+D:\OpenResource\FlowerViewer\FlowerViewer\obj\Debug\Styles\Controls.HorizontalFlatListBox.baml
+D:\OpenResource\FlowerViewer\FlowerViewer\obj\Debug\Styles\Controls.Text.baml
