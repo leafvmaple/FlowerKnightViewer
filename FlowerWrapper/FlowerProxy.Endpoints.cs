@@ -149,19 +149,19 @@ namespace FlowerWrapper
 		}
 
 		/// <summary>
-		/// Endpoint "/api/v1/character/getBook" 传输协议
-		/// </summary>
-		public IObservable<Session> api_character_getBook
-		{
-			get { return this.ApiSessionSource.Where(x => x.PathAndQuery == "/api/v1/character/getBook"); }
-		}
-
-		/// <summary>
 		/// Endpoint "/api/v1/mission/setPanelMissionStatus" 传输协议
 		/// </summary>
 		public IObservable<Session> api_mission_setPanelMissionStatus
 		{
 			get { return this.ApiSessionSource.Where(x => x.PathAndQuery == "/api/v1/mission/setPanelMissionStatus"); }
+		}
+
+		/// <summary>
+		/// Endpoint "/social/rpc" 传输协议
+		/// </summary>
+		public IObservable<Session> dmm_social_rpc
+		{
+			get { return this.ApiSessionSource.Where(x => x.PathAndQuery.StartsWith("/social/rpc")); }
 		}
 
 	}

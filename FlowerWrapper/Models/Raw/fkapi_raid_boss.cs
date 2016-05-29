@@ -13,3 +13,4 @@ namespace FlowerWrapper.Models.Raw
 	public class fkapi_userRaidBossUserList
 	{
 	}
+}

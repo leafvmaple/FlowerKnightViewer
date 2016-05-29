@@ -64,10 +64,17 @@
       <DependentUpon>FlowerProxy.Endpoints.tt</DependentUpon>
     </Compile>
     <Compile Include="FlowerProxyExtensions.cs" />
+    <Compile Include="Friend.cs" />
     <Compile Include="Interface\IProxySettings.cs" />
     <Compile Include="FlowerClient.cs" />
     <Compile Include="Internal\Extensions.cs" />
+    <Compile Include="Knight.cs" />
+    <Compile Include="Models\Raw\dmm_source_rpc.cs" />
+    <Compile Include="Models\Raw\fkapi_friend.cs" />
+    <Compile Include="Models\Raw\fkapi_friend_accept.cs" />
     <Compile Include="Models\Raw\fkapi_login.cs" />
+    <Compile Include="Models\Raw\fkapi_news.cs" />
+    <Compile Include="Models\Raw\fkapi_raid_boss.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Win32\INTERNET_PROXY_INFO.cs" />
     <Compile Include="Win32\NativeMethods.cs" />

@@ -25,8 +25,12 @@
 		"/api/v1/boxGacha/getBoxGachaSchedule",
 		"/api/v1/exchange/getExchangeList",
 		"/api/v1/campaignSerial/getCampaignSerialSchedule",
-		"/api/v1/character/getBook",
 		"/api/v1/mission/setPanelMissionStatus",
+	};
+
+	var endpointext = new[]
+	{
+		"/social/rpc",
 	};
 #>
 // 
@@ -59,6 +63,24 @@ namespace FlowerWrapper
 		public IObservable<Session> <#= name #>
 		{
 			get { return this.ApiSessionSource.Where(x => x.PathAndQuery == "<#= endpoint #>"); }
+		}
+
+<#
+	}
+	foreach (var endpoint in endpointext)
+	{	
+		var names = endpoint
+			.Split(new [] { '/' }, StringSplitOptions.RemoveEmptyEntries)
+			.Distinct();
+
+		var name = "dmm_" + string.Join("_", names);
+#>
+		/// <summary>
+		/// Endpoint "<#= endpoint #>" 传输协议
+		/// </summary>
+		public IObservable<Session> <#= name #>
+		{
+			get { return this.ApiSessionSource.Where(x => x.PathAndQuery.StartsWith("<#= endpoint #>")); }
 		}
 
 <#

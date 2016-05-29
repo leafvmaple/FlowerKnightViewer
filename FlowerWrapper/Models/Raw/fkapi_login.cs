@@ -18,7 +18,7 @@ namespace FlowerWrapper.Models.Raw
         public fkapi_userPointItemList[] userPointItemList { get; set; }
         public string sessionKey { get; set; }
         public fkapi_masterLoginBonus masterLoginBonus { get; set; }
-        public int loginBonusGroupId { get; set; }
+        public long loginBonusGroupId { get; set; }
         public fkapi_masterLoginBonusList[] masterLoginBonusList { get; set; }
         public fkapi_masterLimitationLoginBonus[] masterLimitationLoginBonus { get; set; }
         public fkapi_masterAdministratorMailScheduleList[] masterAdministratorMailScheduleList { get; set; }
@@ -28,19 +28,19 @@ namespace FlowerWrapper.Models.Raw
         public fkapi_userComebackLoginBonusList[] userComebackLoginBonusList { get; set; }
         public fkapi_masterComebackLoginBonusItemList[] masterComebackLoginBonusItemList { get; set; }
         public fkapi_masterComebackLoginBonusGroupList[] masterComebackLoginBonusGroupList { get; set; }
-        public int gacha5starPurchaseCount { get; set; }
+        public long gacha5starPurchaseCount { get; set; }
         public fkapi_userGachaTicketList[] userGachaTicketList { get; set; }
         public fkapi_userBoostList[] userBoostList { get; set; }
         public fkapi_userMissionList[] userMissionList { get; set; }
         public fkapi_userCharacterQuestList[] userCharacterQuestList { get; set; }
-        public int userCampaignGoodsPurchaseFlag { get; set; }
+        public long userCampaignGoodsPurchaseFlag { get; set; }
         public string userRetryPaymentItem { get; set; }
-        public int userSpecialGachaPurchaseCount { get; set; }
-        public int userGardenMakeoverBgmId { get; set; }
+        public long userSpecialGachaPurchaseCount { get; set; }
+        public long userGardenMakeoverBgmId { get; set; }
         public fkapi_userGardenMakeoverPurchaseItemList[] userGardenMakeoverPurchaseItemList { get; set; }
         public fkapi_masterLoginContinueBonusList[] masterLoginContinueBonusList { get; set; }
-        public int nextLoginContinueBonusDateDiff { get; set; }
-        public int nextLoginContinueBonusGroupId { get; set; }
+        public long nextLoginContinueBonusDateDiff { get; set; }
+        public long nextLoginContinueBonusGroupId { get; set; }
         public fkapi_userWhaleCharacterPartyList[] userWhaleCharacterPartyList { get; set; }
         public fkapi_userWhaleMysetNameList[] userWhaleMysetNameList { get; set; }
         public fkapi_userPanelMissionList[] userPanelMissionList { get; set; }
@@ -48,243 +48,243 @@ namespace FlowerWrapper.Models.Raw
         public string resultCode { get; set; }
         public string buildVersion { get; set; }
         public string serverTime { get; set; }
-        public int loginBonusTypeId { get; set; }
+        public long loginBonusTypeId { get; set; }
         public fkapi_userGardenCharacterList[] userGardenCharacterList { get; set; }
         public string userWhaleTotalPower { get; set; }
     }
     public class fkapi_user
     {
-        public int id { get; set; }
-        public int attributeId { get; set; }
-        public int openSocialId { get; set; }
+        public long id { get; set; }
+        public long attributeId { get; set; }
+        public long openSocialId { get; set; }
         public string searchUserId { get; set; }
-        public int stamina { get; set; }
+        public long stamina { get; set; }
         public string staminaTime { get; set; }
-        public int battlePoint { get; set; }
+        public long battlePoint { get; set; }
         public string battlePointTime { get; set; }
-        public int gameMoney { get; set; }
-        public int chargeMoney { get; set; }
-        public int gachaPoint { get; set; }
-        public int raidBossGachaPoint { get; set; }
-        public int registrationEndFlag { get; set; }
-        public int levelId { get; set; }
-        public int levelExperience { get; set; }
-        public int maxFriend { get; set; }
-        public int maxCharacterBox { get; set; }
-        public int maxCharacterEquipmentBox { get; set; }
-        public int maxMysetNum { get; set; }
-        public int activeCharacterPartySetNum { get; set; }
-        public int deputyLeaderCharacterId { get; set; }
-        public int deputyLeaderUserCharacterId { get; set; }
+        public long gameMoney { get; set; }
+        public long chargeMoney { get; set; }
+        public long gachaPoint { get; set; }
+        public long raidBossGachaPoint { get; set; }
+        public long registrationEndFlag { get; set; }
+        public long levelId { get; set; }
+        public long levelExperience { get; set; }
+        public long maxFriend { get; set; }
+        public long maxCharacterBox { get; set; }
+        public long maxCharacterEquipmentBox { get; set; }
+        public long maxMysetNum { get; set; }
+        public long activeCharacterPartySetNum { get; set; }
+        public long deputyLeaderCharacterId { get; set; }
+        public long deputyLeaderUserCharacterId { get; set; }
         public string newsHideIdList { get; set; }
     }
     public class fkapi_userSearchQuest
     {
-        public int searchQuestPoint { get; set; }
+        public long searchQuestPoint { get; set; }
         public string searchQuestPointTime { get; set; }
     }
     public class fkapi_userAchievement
     {
-        public int id { get; set; }
-        public int totalLoginCount { get; set; }
+        public long id { get; set; }
+        public long totalLoginCount { get; set; }
         public string loginDate { get; set; }
-        public int friendTotalCount { get; set; }
-        public int achievementId1FinishFlag { get; set; }
-        public int achievementId2FinishFlag { get; set; }
-        public int achievementId3FinishFlag { get; set; }
-        public int achievementId4FinishFlag { get; set; }
-        public int achievementId5FinishFlag { get; set; }
-        public int achievementId6FinishFlag { get; set; }
-        public int achievementId7FinishFlag { get; set; }
-        public int achievementId8FinishFlag { get; set; }
-        public int achievementId9FinishFlag { get; set; }
-        public int achievementId10FinishFlag { get; set; }
-        public int achievementId11FinishFlag { get; set; }
-        public int achievementId12FinishFlag { get; set; }
-        public int achievementId13FinishFlag { get; set; }
-        public int achievementId14FinishFlag { get; set; }
-        public int achievementId15FinishFlag { get; set; }
-        public int achievementId16FinishFlag { get; set; }
-        public int achievementId17FinishFlag { get; set; }
-        public int achievementId18FinishFlag { get; set; }
-        public int achievementId19FinishFlag { get; set; }
-        public int achievementId20FinishFlag { get; set; }
-        public int achievementId21FinishFlag { get; set; }
-        public int achievementId22FinishFlag { get; set; }
-        public int achievementId23FinishFlag { get; set; }
-        public int achievementId24FinishFlag { get; set; }
-        public int achievementId25FinishFlag { get; set; }
-        public int achievementId26FinishFlag { get; set; }
-        public int achievementId27FinishFlag { get; set; }
-        public int achievementId28FinishFlag { get; set; }
-        public int achievementId29FinishFlag { get; set; }
-        public int achievementId30FinishFlag { get; set; }
-        public int achievementId31FinishFlag { get; set; }
-        public int achievementId32FinishFlag { get; set; }
-        public int achievementId33FinishFlag { get; set; }
-        public int achievementId34FinishFlag { get; set; }
-        public int achievementId35FinishFlag { get; set; }
-        public int achievementId36FinishFlag { get; set; }
-        public int achievementId37FinishFlag { get; set; }
-        public int achievementId38FinishFlag { get; set; }
-        public int achievementId39FinishFlag { get; set; }
-        public int achievementId40FinishFlag { get; set; }
-        public int achievementId41FinishFlag { get; set; }
-        public int achievementId42FinishFlag { get; set; }
-        public int achievementId43FinishFlag { get; set; }
-        public int achievementId44FinishFlag { get; set; }
-        public int achievementId45FinishFlag { get; set; }
-        public int achievementId46FinishFlag { get; set; }
-        public int achievementId47FinishFlag { get; set; }
-        public int achievementId48FinishFlag { get; set; }
-        public int achievementId49FinishFlag { get; set; }
-        public int achievementId50FinishFlag { get; set; }
-        public int achievementId51FinishFlag { get; set; }
-        public int achievementId52FinishFlag { get; set; }
-        public int achievementId53FinishFlag { get; set; }
-        public int achievementId54FinishFlag { get; set; }
-        public int achievementId55FinishFlag { get; set; }
-        public int achievementId56FinishFlag { get; set; }
-        public int achievementId57FinishFlag { get; set; }
-        public int achievementId58FinishFlag { get; set; }
-        public int achievementId59FinishFlag { get; set; }
-        public int achievementId60FinishFlag { get; set; }
-        public int achievementId61FinishFlag { get; set; }
-        public int achievementId62FinishFlag { get; set; }
-        public int achievementId63FinishFlag { get; set; }
-        public int achievementId64FinishFlag { get; set; }
-        public int achievementId65FinishFlag { get; set; }
-        public int achievementId66FinishFlag { get; set; }
-        public int achievementId67FinishFlag { get; set; }
-        public int achievementId68FinishFlag { get; set; }
-        public int achievementId69FinishFlag { get; set; }
-        public int achievementId70FinishFlag { get; set; }
-        public int achievementId71FinishFlag { get; set; }
-        public int achievementId72FinishFlag { get; set; }
-        public int achievementId73FinishFlag { get; set; }
-        public int achievementId74FinishFlag { get; set; }
-        public int achievementId75FinishFlag { get; set; }
-        public int achievementId76FinishFlag { get; set; }
-        public int achievementId77FinishFlag { get; set; }
-        public int achievementId78FinishFlag { get; set; }
-        public int achievementId79FinishFlag { get; set; }
-        public int achievementId80FinishFlag { get; set; }
-        public int achievementId81FinishFlag { get; set; }
-        public int achievementId82FinishFlag { get; set; }
-        public int achievementId83FinishFlag { get; set; }
-        public int achievementId84FinishFlag { get; set; }
-        public int achievementId85FinishFlag { get; set; }
-        public int achievementId86FinishFlag { get; set; }
-        public int achievementId87FinishFlag { get; set; }
-        public int achievementId88FinishFlag { get; set; }
+        public long friendTotalCount { get; set; }
+        public long achievementId1FinishFlag { get; set; }
+        public long achievementId2FinishFlag { get; set; }
+        public long achievementId3FinishFlag { get; set; }
+        public long achievementId4FinishFlag { get; set; }
+        public long achievementId5FinishFlag { get; set; }
+        public long achievementId6FinishFlag { get; set; }
+        public long achievementId7FinishFlag { get; set; }
+        public long achievementId8FinishFlag { get; set; }
+        public long achievementId9FinishFlag { get; set; }
+        public long achievementId10FinishFlag { get; set; }
+        public long achievementId11FinishFlag { get; set; }
+        public long achievementId12FinishFlag { get; set; }
+        public long achievementId13FinishFlag { get; set; }
+        public long achievementId14FinishFlag { get; set; }
+        public long achievementId15FinishFlag { get; set; }
+        public long achievementId16FinishFlag { get; set; }
+        public long achievementId17FinishFlag { get; set; }
+        public long achievementId18FinishFlag { get; set; }
+        public long achievementId19FinishFlag { get; set; }
+        public long achievementId20FinishFlag { get; set; }
+        public long achievementId21FinishFlag { get; set; }
+        public long achievementId22FinishFlag { get; set; }
+        public long achievementId23FinishFlag { get; set; }
+        public long achievementId24FinishFlag { get; set; }
+        public long achievementId25FinishFlag { get; set; }
+        public long achievementId26FinishFlag { get; set; }
+        public long achievementId27FinishFlag { get; set; }
+        public long achievementId28FinishFlag { get; set; }
+        public long achievementId29FinishFlag { get; set; }
+        public long achievementId30FinishFlag { get; set; }
+        public long achievementId31FinishFlag { get; set; }
+        public long achievementId32FinishFlag { get; set; }
+        public long achievementId33FinishFlag { get; set; }
+        public long achievementId34FinishFlag { get; set; }
+        public long achievementId35FinishFlag { get; set; }
+        public long achievementId36FinishFlag { get; set; }
+        public long achievementId37FinishFlag { get; set; }
+        public long achievementId38FinishFlag { get; set; }
+        public long achievementId39FinishFlag { get; set; }
+        public long achievementId40FinishFlag { get; set; }
+        public long achievementId41FinishFlag { get; set; }
+        public long achievementId42FinishFlag { get; set; }
+        public long achievementId43FinishFlag { get; set; }
+        public long achievementId44FinishFlag { get; set; }
+        public long achievementId45FinishFlag { get; set; }
+        public long achievementId46FinishFlag { get; set; }
+        public long achievementId47FinishFlag { get; set; }
+        public long achievementId48FinishFlag { get; set; }
+        public long achievementId49FinishFlag { get; set; }
+        public long achievementId50FinishFlag { get; set; }
+        public long achievementId51FinishFlag { get; set; }
+        public long achievementId52FinishFlag { get; set; }
+        public long achievementId53FinishFlag { get; set; }
+        public long achievementId54FinishFlag { get; set; }
+        public long achievementId55FinishFlag { get; set; }
+        public long achievementId56FinishFlag { get; set; }
+        public long achievementId57FinishFlag { get; set; }
+        public long achievementId58FinishFlag { get; set; }
+        public long achievementId59FinishFlag { get; set; }
+        public long achievementId60FinishFlag { get; set; }
+        public long achievementId61FinishFlag { get; set; }
+        public long achievementId62FinishFlag { get; set; }
+        public long achievementId63FinishFlag { get; set; }
+        public long achievementId64FinishFlag { get; set; }
+        public long achievementId65FinishFlag { get; set; }
+        public long achievementId66FinishFlag { get; set; }
+        public long achievementId67FinishFlag { get; set; }
+        public long achievementId68FinishFlag { get; set; }
+        public long achievementId69FinishFlag { get; set; }
+        public long achievementId70FinishFlag { get; set; }
+        public long achievementId71FinishFlag { get; set; }
+        public long achievementId72FinishFlag { get; set; }
+        public long achievementId73FinishFlag { get; set; }
+        public long achievementId74FinishFlag { get; set; }
+        public long achievementId75FinishFlag { get; set; }
+        public long achievementId76FinishFlag { get; set; }
+        public long achievementId77FinishFlag { get; set; }
+        public long achievementId78FinishFlag { get; set; }
+        public long achievementId79FinishFlag { get; set; }
+        public long achievementId80FinishFlag { get; set; }
+        public long achievementId81FinishFlag { get; set; }
+        public long achievementId82FinishFlag { get; set; }
+        public long achievementId83FinishFlag { get; set; }
+        public long achievementId84FinishFlag { get; set; }
+        public long achievementId85FinishFlag { get; set; }
+        public long achievementId86FinishFlag { get; set; }
+        public long achievementId87FinishFlag { get; set; }
+        public long achievementId88FinishFlag { get; set; }
         public string modified { get; set; }
     }
     public class fkapi_userPlant
     {
-        public int id { get; set; }
-        public int plantId { get; set; }
-        public int plantItemId { get; set; }
+        public long id { get; set; }
+        public long plantId { get; set; }
+        public long plantItemId { get; set; }
         public string startDate { get; set; }
-        public int status { get; set; }
+        public long status { get; set; }
     }
     public class fkapi_userItemList
     {
-        public int id { get; set; }
-        public int itemId { get; set; }
+        public long id { get; set; }
+        public long itemId { get; set; }
         public string created { get; set; }
         public string modified { get; set; }
     }
     public class fkapi_userCharacterList
     {
-        public int id { get; set; }
-        public int itemId { get; set; }
-        public int characterId { get; set; }
-        public int characterLevelNum { get; set; }
-        public int characterLevelExperience { get; set; }
-        public int characterSkillLevelNum { get; set; }
-        public int hitPointBonus { get; set; }
-        public int attackBonus { get; set; }
-        public int defenseBonus { get; set; }
-        public int favorabilityValue { get; set; }
-        public int favoriteFlag { get; set; }
-        public int maxEquipmentSlotCount { get; set; }
+        public long id { get; set; }
+        public long itemId { get; set; }
+        public long characterId { get; set; }
+        public long characterLevelNum { get; set; }
+        public long characterLevelExperience { get; set; }
+        public long characterSkillLevelNum { get; set; }
+        public long hitPointBonus { get; set; }
+        public long attackBonus { get; set; }
+        public long defenseBonus { get; set; }
+        public long favorabilityValue { get; set; }
+        public long favoriteFlag { get; set; }
+        public long maxEquipmentSlotCount { get; set; }
         public string created { get; set; }
         public string modified { get; set; }
     }
     public class fkapi_userCharacterPartyList
     {
-        public int id { get; set; }
-        public int userCharacterId { get; set; }
-        public int setNum { get; set; }
-        public int rowNum { get; set; }
-        public int orderNum { get; set; }
+        public long id { get; set; }
+        public long userCharacterId { get; set; }
+        public long setNum { get; set; }
+        public long rowNum { get; set; }
+        public long orderNum { get; set; }
         public string created { get; set; }
         public string modified { get; set; }
     }
     public class fkapi_userCharacterEquipmentList
     {
-        public int id { get; set; }
-        public int userCharacterId { get; set; }
-        public int characterEquipmentId { get; set; }
-        public int characterEquipmentSlotNum { get; set; }
-        public int characterEquipmentLevelNum { get; set; }
-        public int characterEquipmentLevelExperience { get; set; }
-        public int favoriteFlag { get; set; }
+        public long id { get; set; }
+        public long userCharacterId { get; set; }
+        public long characterEquipmentId { get; set; }
+        public long characterEquipmentSlotNum { get; set; }
+        public long characterEquipmentLevelNum { get; set; }
+        public long characterEquipmentLevelExperience { get; set; }
+        public long favoriteFlag { get; set; }
         public string created { get; set; }
         public string modified { get; set; }
     }
     public class fkapi_userDungeon
     {
-        public int id { get; set; }
-        public int dungeonId { get; set; }
-        public int status { get; set; }
+        public long id { get; set; }
+        public long dungeonId { get; set; }
+        public long status { get; set; }
         public string created { get; set; }
         public string modified { get; set; }
     }
     public class fkapi_userStageList
     {
-        public int id { get; set; }
-        public int stageId { get; set; }
-        public int evaluationPoint { get; set; }
-        public int status { get; set; }
-        public int playCount { get; set; }
+        public long id { get; set; }
+        public long stageId { get; set; }
+        public long evaluationPoint { get; set; }
+        public long status { get; set; }
+        public long playCount { get; set; }
         public string created { get; set; }
         public string modified { get; set; }
     }
     public class fkapi_userMysetNameList
     {
-        public int id { get; set; }
-        public int setNum { get; set; }
+        public long id { get; set; }
+        public long setNum { get; set; }
         public string mysetName { get; set; }
     }
     public class fkapi_userPointItemList
     {
-        public int id { get; set; }
-        public int itemId { get; set; }
-        public int pointItemTypeId { get; set; }
-        public int point { get; set; }
+        public long id { get; set; }
+        public long itemId { get; set; }
+        public long pointItemTypeId { get; set; }
+        public long point { get; set; }
     }
     public class fkapi_masterLoginBonus
     {
-        public int id { get; set; }
+        public long id { get; set; }
         public string name { get; set; }
         public string description { get; set; }
-        public int dayCount { get; set; }
-        public int itemId { get; set; }
-        public int amount { get; set; }
-        public int characterLevelNum { get; set; }
-        public int characterLevelExperience { get; set; }
+        public long dayCount { get; set; }
+        public long itemId { get; set; }
+        public long amount { get; set; }
+        public long characterLevelNum { get; set; }
+        public long characterLevelExperience { get; set; }
     }
     public class fkapi_masterLoginBonusList
     {
-        public int id { get; set; }
+        public long id { get; set; }
         public string name { get; set; }
         public string description { get; set; }
-        public int dayCount { get; set; }
-        public int itemId { get; set; }
-        public int amount { get; set; }
-        public int characterLevelNum { get; set; }
-        public int characterLevelExperience { get; set; }
+        public long dayCount { get; set; }
+        public long itemId { get; set; }
+        public long amount { get; set; }
+        public long characterLevelNum { get; set; }
+        public long characterLevelExperience { get; set; }
     }
     public class fkapi_masterLimitationLoginBonus
     {
@@ -294,93 +294,93 @@ namespace FlowerWrapper.Models.Raw
     }
     public class fkapi_userEventItemList
     {
-        public int id { get; set; }
-        public int eventTypeId { get; set; }
-        public int eventId { get; set; }
-        public int itemId { get; set; }
-        public int totalAcquisitionNumber { get; set; }
-        public int amount { get; set; }
+        public long id { get; set; }
+        public long eventTypeId { get; set; }
+        public long eventId { get; set; }
+        public long itemId { get; set; }
+        public long totalAcquisitionNumber { get; set; }
+        public long amount { get; set; }
     }
     public class fkapi_givingMasterComebackLoginBonusList
     {
-        public int id { get; set; }
+        public long id { get; set; }
         public string name { get; set; }
         public string description { get; set; }
-        public int dayCount { get; set; }
-        public int loginBonusGroupId { get; set; }
-        public int comebackLoginBonusGroupId { get; set; }
-        public int comebackLoginBonusItemGroupId { get; set; }
+        public long dayCount { get; set; }
+        public long loginBonusGroupId { get; set; }
+        public long comebackLoginBonusGroupId { get; set; }
+        public long comebackLoginBonusItemGroupId { get; set; }
         public string textureName { get; set; }
     }
     public class fkapi_masterComebackLoginBonusList
     {
-        public int id { get; set; }
+        public long id { get; set; }
         public string name { get; set; }
         public string description { get; set; }
-        public int dayCount { get; set; }
-        public int loginBonusGroupId { get; set; }
-        public int comebackLoginBonusGroupId { get; set; }
-        public int comebackLoginBonusItemGroupId { get; set; }
+        public long dayCount { get; set; }
+        public long loginBonusGroupId { get; set; }
+        public long comebackLoginBonusGroupId { get; set; }
+        public long comebackLoginBonusItemGroupId { get; set; }
         public string textureName { get; set; }
     }
     public class fkapi_userComebackLoginBonusList
     {
-        public int id { get; set; }
-        public int comebackLoginBonusGroupId { get; set; }
-        public int dayCount { get; set; }
+        public long id { get; set; }
+        public long comebackLoginBonusGroupId { get; set; }
+        public long dayCount { get; set; }
     }
     public class fkapi_masterComebackLoginBonusItemList
     {
-        public int id { get; set; }
-        public int itemId { get; set; }
-        public int amount { get; set; }
-        public int characterLevelNum { get; set; }
-        public int characterLevelExperience { get; set; }
-        public int characterMaxEquipmentSlotCount { get; set; }
-        public int characterSkillLevelNum { get; set; }
+        public long id { get; set; }
+        public long itemId { get; set; }
+        public long amount { get; set; }
+        public long characterLevelNum { get; set; }
+        public long characterLevelExperience { get; set; }
+        public long characterMaxEquipmentSlotCount { get; set; }
+        public long characterSkillLevelNum { get; set; }
     }
     public class fkapi_masterComebackLoginBonusGroupList
     {
-        public int id { get; set; }
-        public int loginBonusTypeId { get; set; }
+        public long id { get; set; }
+        public long loginBonusTypeId { get; set; }
         public string name { get; set; }
         public string description { get; set; }
         public string message1 { get; set; }
         public string message2 { get; set; }
-        public int dormancyDay { get; set; }
+        public long dormancyDay { get; set; }
         public string registrationDate { get; set; }
         public string startDate { get; set; }
         public string endDate { get; set; }
     }
     public class fkapi_userGachaTicketList
     {
-        public int gachaGroupId { get; set; }
-        public int itemId { get; set; }
-        public int amount { get; set; }
-        public int purchaseCount { get; set; }
+        public long gachaGroupId { get; set; }
+        public long itemId { get; set; }
+        public long amount { get; set; }
+        public long purchaseCount { get; set; }
     }
     public class fkapi_userBoostList
     {
     }
     public class fkapi_userMissionList
     {
-        public int id { get; set; }
-        public int missionId { get; set; }
-        public int progressCount { get; set; }
-        public int status { get; set; }
-        public int unlockFlag { get; set; }
+        public long id { get; set; }
+        public long missionId { get; set; }
+        public long progressCount { get; set; }
+        public long status { get; set; }
+        public long unlockFlag { get; set; }
     }
     public class fkapi_userCharacterQuestList
     {
-        public int id { get; set; }
-        public int characterBookId { get; set; }
-        public int characterQuestId { get; set; }
-        public int status { get; set; }
+        public long id { get; set; }
+        public long characterBookId { get; set; }
+        public long characterQuestId { get; set; }
+        public long status { get; set; }
     }
     public class fkapi_userGardenMakeoverPurchaseItemList
     {
-        public int id { get; set; }
-        public int itemId { get; set; }
+        public long id { get; set; }
+        public long itemId { get; set; }
         public string created { get; set; }
         public string modified { get; set; }
     }
@@ -395,10 +395,10 @@ namespace FlowerWrapper.Models.Raw
     }
     public class fkapi_userPanelMissionList
     {
-        public int panelGroupId { get; set; }
-        public int missionId { get; set; }
-        public int progressCount { get; set; }
-        public int status { get; set; }
+        public long panelGroupId { get; set; }
+        public long missionId { get; set; }
+        public long progressCount { get; set; }
+        public long status { get; set; }
     }
     public class fkapi_userGardenCharacterList
     {

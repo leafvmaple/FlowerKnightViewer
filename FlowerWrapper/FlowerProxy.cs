@@ -41,8 +41,8 @@ namespace FlowerWrapper
                 .Publish();
 
             this.apiSource = this.connectableSessionSource
-                .Where(s => s.PathAndQuery.StartsWith("/api/v1"))
-                .Where(s => s.oResponse.MIMEType.Equals("text/plain"))
+                .Where(s => s.PathAndQuery.StartsWith("/api/v1") || s.PathAndQuery.StartsWith("/social/rpc"))
+                .Where(s => s.oResponse.MIMEType.Equals("text/plain") || s.oResponse.MIMEType.Equals("application/json"))
             #region .Do(debug)
 #if DEBUG
                 .Do(session =>
