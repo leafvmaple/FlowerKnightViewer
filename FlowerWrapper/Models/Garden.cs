@@ -12,14 +12,12 @@ namespace FlowerWrapper.Models
     {
         public void UpdateGarden(fkapi_login loginData)
         {
-            if (Knight == null) Knight = new Knight();
             Knight.UpdateKnight(loginData.user);
         }
 
         public void UpdateGarden(dmm_source_rpc[] sourceRpc)
         {
-            if (Knight == null) Knight = new Knight();
-            Knight.UpdateNickName(sourceRpc[0].data);
+            Knight = new Knight(sourceRpc[0].data);
         }
 
         private Knight _Knight;

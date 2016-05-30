@@ -42,7 +42,14 @@
                     </livet:InteractionMessageTrigger>
                 </i:Interaction.Triggers>
             </WebBrowser>
-            <views:MainContent Grid.Row="1"/>
+            <ContentControl Grid.Row="1"
+							Content="{Binding Content}">
+                <ContentControl.Resources>
+                    <DataTemplate DataType="{x:Type viewModels:MainContentViewModel}">
+                        <views:MainContent />
+                    </DataTemplate>
+                </ContentControl.Resources>
+            </ContentControl>
         </Grid>
     </Grid>
 </Window>

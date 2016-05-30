@@ -16,7 +16,7 @@ using System.Windows.Shapes;
 namespace FlowerViewer.Views.Contents
 {
     /// <summary>
-    /// Knight.xaml 的交互逻辑
+    /// Garden.xaml 的交互逻辑
     /// </summary>
     public partial class Garden
     {

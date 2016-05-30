@@ -27,6 +27,29 @@ namespace FlowerViewer.Models
 
             Current = GetInitialSettings();
         }
+
+        #region TopMost 変更通知
+
+        private bool _TopMost;
+
+        /// <summary>
+        /// 窗口是否始终在最前。
+        /// </summary>
+        public bool TopMost
+        {
+            get { return this._TopMost; }
+            set
+            {
+                if (this._TopMost != value)
+                {
+                    this._TopMost = value;
+                    this.RaisePropertyChanged();
+                }
+            }
+        }
+
+        #endregion
+
         public static Settings GetInitialSettings()
         {
             return new Settings

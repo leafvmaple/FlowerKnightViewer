@@ -86,6 +86,22 @@ namespace FlowerViewer.ViewModels
 
         #endregion
 
+        #region TopMost 変更通知
+
+        public bool TopMost
+        {
+            get { return Models.Settings.Current.TopMost; }
+            set
+            {
+                if (Models.Settings.Current.TopMost != value)
+                {
+                    Models.Settings.Current.TopMost = value;
+                    this.RaisePropertyChanged();
+                }
+            }
+        }
+        #endregion
+
         private void UpdateMode()
         {
             //this.Mode = FlowerClient.Current.IsStarted

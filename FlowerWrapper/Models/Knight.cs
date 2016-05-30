@@ -10,9 +10,9 @@ namespace FlowerWrapper.Models
 {
     public class Knight : NotificationObject
     {
-        public Knight()
+        public Knight(fkapi_data data)
         {
-
+            NickName = data.nickname;
         }
 
         public void UpdateKnight(fkapi_user user)

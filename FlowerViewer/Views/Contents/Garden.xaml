@@ -31,12 +31,9 @@
         <StackPanel Orientation="Horizontal"
 					DataContext="{Binding Knight}">
             <TextBlock>
-				<Run Text="{Binding Model.Nickname, Mode=OneWay}"
+				<Run Text="{Binding Model.NickName, Mode=OneWay}"
 					 Style="{DynamicResource EmphaticTextElementStyleKey}"
 					 FontSize="18" />
-				<Run Text="{Binding Model.Rank, Mode=OneWay}"
-					 Style="{DynamicResource EmphaticTextElementStyleKey}"
-					 FontSize="14" />
 				<LineBreak />
 				<Run Text="{Binding Model.Comment, Mode=OneWay}" />
             </TextBlock>
