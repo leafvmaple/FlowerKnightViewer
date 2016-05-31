@@ -10,5 +10,6 @@ namespace FlowerWrapper.Models.Raw
 		public string resultCode { get; set; }
 		public string buildVersion { get; set; }
 		public string serverTime { get; set; }
+		public string version { get; set; }
 	}
 }

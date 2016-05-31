@@ -39,12 +39,4 @@ namespace FlowerWrapper.Models.Raw
 		public string created { get; set; }
 		public long deputyLeaderCharacterId { get; set; }
 	}
-	public class fkapi_userMissionList
-	{
-		public long id { get; set; }
-		public long missionId { get; set; }
-		public long progressCount { get; set; }
-		public long status { get; set; }
-		public long unlockFlag { get; set; }
-	}
 }

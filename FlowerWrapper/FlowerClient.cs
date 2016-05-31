@@ -41,24 +41,21 @@ namespace FlowerWrapper
 
             var login = Proxy.api_user_login.TryParse<fkapi_login>().FirstAsync().ToTask();
             var news = Proxy.api_config_getNews.TryParse<fkapi_news>().FirstAsync().ToTask();
-            var raidBoss = this.Proxy.api_raidBoss_getRaidBossList.TryParse<fkapi_raid_boss>().FirstAsync().ToTask();
             var friends = this.Proxy.api_friend_getFriendList.TryParse<fkapi_friend>().FirstAsync().ToTask();
+            var raidBoss = this.Proxy.api_raidBoss_getRaidBossList.TryParse<fkapi_raid_boss>().FirstAsync().ToTask();
             var friendApt = this.Proxy.api_friend_getFriendAcceptList.TryParse<fkapi_friend_accept>().FirstAsync().ToTask();
 
             Proxy.api_user_login.FirstAsync().Subscribe(async session =>
             {
-                var timeout = Task.Delay(TimeSpan.FromSeconds(20));
+                //var timeout = Task.Delay(TimeSpan.FromSeconds(20));
 
-                // 当所有任务都已经完成，或者已经延时已经到.
-                var bCanInitialize = await Task.WhenAny(new Task[] { news, raidBoss, friends, friendApt }.WhenAll(), timeout) != timeout;
+                // 当所有任务都已经完成
+                await Task.WhenAll(news, raidBoss, friends, friendApt);
 
-                if (bCanInitialize)
-                {
-                    Garden.UpdateGarden(await login);
+                Garden.UpdateGarden(await login);
 
-                    Friend.UpdateFriend(await friends);
-                    Friend.UpdateFriendAccept(await friendApt);
-                }
+                Friend.UpdateFriend(await friends);
+                Friend.UpdateFriendAccept(await friendApt);
             });
         }
 

@@ -56,8 +56,8 @@ namespace FlowerWrapper.Models
         }
 
 
-        private int _Level;
-        public int Level
+        private long _Level;
+        public long Level
         {
             get { return _Level; }
             set
@@ -70,8 +70,8 @@ namespace FlowerWrapper.Models
             }
         }
 
-        private int _ExperienceForNexeLevel;
-        public int ExperienceForNexeLevel
+        private long _ExperienceForNexeLevel;
+        public long ExperienceForNexeLevel
         {
             get { return _ExperienceForNexeLevel; }
             set
