@@ -14,29 +14,37 @@ namespace FlowerWrapper.Models.Raw
 	}
 	public class fkapi_userFriendInformationList
 	{
-		public int userId { get; set; }
+		public long userId { get; set; }
 		public string openSocialId { get; set; }
 		public string userName { get; set; }
-		public int userLevelNum { get; set; }
-		public int character1Id { get; set; }
-		public int character1LevelNum { get; set; }
-		public int character1SkillLevelNum { get; set; }
-		public int character2Id { get; set; }
-		public int character2LevelNum { get; set; }
-		public int character2SkillLevelNum { get; set; }
-		public int character3Id { get; set; }
-		public int character3LevelNum { get; set; }
-		public int character3SkillLevelNum { get; set; }
-		public int character4Id { get; set; }
-		public int character4LevelNum { get; set; }
-		public int character4SkillLevelNum { get; set; }
-		public int character5Id { get; set; }
-		public int character5LevelNum { get; set; }
-		public int character5SkillLevelNum { get; set; }
+		public long userLevelNum { get; set; }
+		public long character1Id { get; set; }
+		public long character1LevelNum { get; set; }
+		public long character1SkillLevelNum { get; set; }
+		public long character2Id { get; set; }
+		public long character2LevelNum { get; set; }
+		public long character2SkillLevelNum { get; set; }
+		public long character3Id { get; set; }
+		public long character3LevelNum { get; set; }
+		public long character3SkillLevelNum { get; set; }
+		public long character4Id { get; set; }
+		public long character4LevelNum { get; set; }
+		public long character4SkillLevelNum { get; set; }
+		public long character5Id { get; set; }
+		public long character5LevelNum { get; set; }
+		public long character5SkillLevelNum { get; set; }
 		public string lastPlayed { get; set; }
-		public int totalEvaluationPoint { get; set; }
-		public int totalPower { get; set; }
+		public long totalEvaluationPoint { get; set; }
+		public long totalPower { get; set; }
 		public string created { get; set; }
-		public int deputyLeaderCharacterId { get; set; }
+		public long deputyLeaderCharacterId { get; set; }
+	}
+	public class fkapi_userMissionList
+	{
+		public long id { get; set; }
+		public long missionId { get; set; }
+		public long progressCount { get; set; }
+		public long status { get; set; }
+		public long unlockFlag { get; set; }
 	}
 }

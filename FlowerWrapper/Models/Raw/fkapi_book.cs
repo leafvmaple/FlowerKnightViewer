@@ -14,16 +14,16 @@ namespace FlowerWrapper.Models.Raw
 	}
 	public class fkapi_userCharacterBookList
 	{
-		public int characterId { get; set; }
-		public int status { get; set; }
+		public long characterId { get; set; }
+		public long status { get; set; }
 		public string created { get; set; }
 	}
 	public class fkapi_userCharacterBookGroupList
 	{
-		public int id { get; set; }
-		public int characterBookId { get; set; }
-		public int status { get; set; }
-		public int favorabilityValue { get; set; }
+		public long id { get; set; }
+		public long characterBookId { get; set; }
+		public long status { get; set; }
+		public long favorabilityValue { get; set; }
 		public string created { get; set; }
 	}
 }

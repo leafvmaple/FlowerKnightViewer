@@ -2,6 +2,7 @@ using System;
 
 namespace FlowerWrapper.Models.Raw
 {
+	//fkapi_story story;
 	public class fkapi_story
 	{
 		public fkapi_userStoryList[] userStoryList { get; set; }
@@ -12,7 +13,8 @@ namespace FlowerWrapper.Models.Raw
 	}
 	public class fkapi_userStoryList
 	{
-		public int id { get; set; }
-		public int userId { get; set; }
-		public int storyId { get; set; }
+		public long id { get; set; }
+		public long userId { get; set; }
+		public long storyId { get; set; }
 	}
+}

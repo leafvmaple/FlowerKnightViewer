@@ -2,6 +2,7 @@ using System;
 
 namespace FlowerWrapper.Models.Raw
 {
+	//fkapi_exchange exchange;
 	public class fkapi_exchange
 	{
 		public string errorMessage { get; set; }
@@ -12,45 +13,45 @@ namespace FlowerWrapper.Models.Raw
 		public fkapi_masterExchangeGroupList[] masterExchangeGroupList { get; set; }
 		public fkapi_masterExchangeCategoryList[] masterExchangeCategoryList { get; set; }
 		public fkapi_masterExchangeCategoryGroupList[] masterExchangeCategoryGroupList { get; set; }
-		public fkapi_userExchangeList[] userExchangeList { get; set; }
+		public object[] userExchangeList { get; set; }
 	}
 	public class fkapi_masterExchangeList
 	{
-		public int id { get; set; }
+		public long id { get; set; }
 		public string name { get; set; }
 		public string description { get; set; }
 		public string comment { get; set; }
-		public int materialItemId { get; set; }
-		public int materialAmount { get; set; }
-		public int exchangeItemId { get; set; }
-		public int exchangeAmount { get; set; }
-		public int exchangeGroupId { get; set; }
-		public int exchangeNum { get; set; }
-		public int nextExchangeNum { get; set; }
-		public int exchangeLimitCount { get; set; }
-		public int characterLevelNum { get; set; }
-		public int characterLevelExperience { get; set; }
-		public int characterSkillLevelNum { get; set; }
-		public int characterMaxEquipmentSlotCount { get; set; }
+		public long materialItemId { get; set; }
+		public long materialAmount { get; set; }
+		public long exchangeItemId { get; set; }
+		public long exchangeAmount { get; set; }
+		public long exchangeGroupId { get; set; }
+		public long exchangeNum { get; set; }
+		public long nextExchangeNum { get; set; }
+		public long exchangeLimitCount { get; set; }
+		public long characterLevelNum { get; set; }
+		public long characterLevelExperience { get; set; }
+		public long characterSkillLevelNum { get; set; }
+		public long characterMaxEquipmentSlotCount { get; set; }
 		public string textureName { get; set; }
 	}
 	public class fkapi_masterExchangeGroupList
 	{
-		public int id { get; set; }
-		public int exchangeTypeId { get; set; }
-		public int exchangeCategoryId { get; set; }
-		public int exchangeExhibitionTypeId { get; set; }
-		public int orderNum { get; set; }
+		public long id { get; set; }
+		public long exchangeTypeId { get; set; }
+		public long exchangeCategoryId { get; set; }
+		public long exchangeExhibitionTypeId { get; set; }
+		public long orderNum { get; set; }
 		public string exchangeLimitText { get; set; }
 		public string startDate { get; set; }
 		public string endDate { get; set; }
 	}
 	public class fkapi_masterExchangeCategoryList
 	{
-		public int id { get; set; }
-		public int groupId { get; set; }
+		public long id { get; set; }
+		public long groupId { get; set; }
 		public string name { get; set; }
-		public int orderNum { get; set; }
+		public long orderNum { get; set; }
 		public string comment { get; set; }
 		public string commentStartdate { get; set; }
 		public string commentEnddate { get; set; }
@@ -58,10 +59,8 @@ namespace FlowerWrapper.Models.Raw
 	}
 	public class fkapi_masterExchangeCategoryGroupList
 	{
-		public int id { get; set; }
+		public long id { get; set; }
 		public string name { get; set; }
-		public int orderNum { get; set; }
+		public long orderNum { get; set; }
 	}
-	public class fkapi_userExchangeList
-	{
-	}
+}
