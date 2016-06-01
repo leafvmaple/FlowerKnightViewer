@@ -75,5 +75,27 @@ namespace FlowerViewer.Models
         }
 
         #endregion
+
+        #region Culture 変更通知
+
+        private string _Culture;
+
+        /// <summary>
+        /// 获取设定语言
+        /// </summary>
+        public string Culture
+        {
+            get { return this._Culture; }
+            set
+            {
+                if (this._Culture != value)
+                {
+                    this._Culture = value;
+                    this.RaisePropertyChanged();
+                }
+            }
+        }
+
+        #endregion
     }
 }

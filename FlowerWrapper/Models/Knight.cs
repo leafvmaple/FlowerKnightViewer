@@ -19,6 +19,10 @@ namespace FlowerWrapper.Models
         {
             Level = user.levelId;
             ExperienceForNexeLevel = user.levelExperience;
+            MaxCharacterBox = user.maxCharacterBox;
+            MaxCharacterEquipmentBox = user.maxCharacterEquipmentBox;
+            MaxFriend = user.maxFriend;
+            GameMoney = user.gameMoney;
         }
 
         public void UpdateNickName(fkapi_data data)
@@ -79,6 +83,78 @@ namespace FlowerWrapper.Models
                 if (_ExperienceForNexeLevel != value)
                 {
                     _ExperienceForNexeLevel = value;
+                    this.RaisePropertyChanged();
+                }
+            }
+        }
+
+        private long _MaxCharacterBox;
+
+        public long MaxCharacterBox
+        {
+            get { return _MaxCharacterBox; }
+            set
+            {
+                if (_MaxCharacterBox != value)
+                {
+                    _MaxCharacterBox = value;
+                    this.RaisePropertyChanged();
+                }
+            }
+        }
+
+        private long _MaxCharacterEquipmentBox;
+
+        public long MaxCharacterEquipmentBox
+        {
+            get { return _MaxCharacterEquipmentBox; }
+            set
+            {
+                if (_MaxCharacterEquipmentBox != value)
+                {
+                    _MaxCharacterEquipmentBox = value;
+                    this.RaisePropertyChanged();
+                }
+            }
+        }
+
+        private long _MaxFriend;
+        public long MaxFriend
+        {
+            get { return _MaxFriend; }
+            set
+            {
+                if (_MaxFriend != value)
+                {
+                    _MaxFriend = value;
+                    this.RaisePropertyChanged();
+                }
+            }
+        }
+
+        private long _GameMoney;
+        public long GameMoney
+        {
+            get { return _GameMoney; }
+            set
+            {
+                if (_GameMoney != value)
+                {
+                    _GameMoney = value;
+                    this.RaisePropertyChanged();
+                }
+            }
+        }
+
+        private long _ChargeMoney;
+        public long ChargeMoney
+        {
+            get { return _ChargeMoney; }
+            set
+            {
+                if (_ChargeMoney != value)
+                {
+                    _ChargeMoney = value;
                     this.RaisePropertyChanged();
                 }
             }

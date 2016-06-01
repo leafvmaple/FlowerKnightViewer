@@ -73,6 +73,7 @@
     <Compile Include="Models\INavigator.cs" />
     <Compile Include="Models\Model.cs" />
     <Compile Include="Models\ProxySettings.cs" />
+    <Compile Include="Models\ResourceService.cs" />
     <Compile Include="Models\Settings.cs" />
     <Compile Include="ViewModels\KnightViewModel.cs" />
     <Compile Include="ViewModels\MainContentViewModel.cs" />
@@ -152,11 +153,11 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
+      <Generator>PublicSettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />

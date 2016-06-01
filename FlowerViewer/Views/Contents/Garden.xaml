@@ -52,5 +52,56 @@
 				<Run Text="exp." />
             </TextBlock>
         </StackPanel>
+
+        <StackPanel Grid.Column="1"
+					Orientation="Horizontal">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Row="0"
+						   Grid.Column="1">
+					<Run Text="{Binding Resources.Homeport_InstantRepair, Source={x:Static models:ResourceService.Current}, Mode=OneWay}" />
+					<Run Text="{Binding Materials.Model.InstantRepairMaterials, Mode=OneWay}"
+						 Style="{DynamicResource EmphaticTextElementStyleKey}" />
+					<LineBreak />
+					<Run Text="{Binding Resources.Homeport_InstantBuild, Source={x:Static models:ResourceService.Current}, Mode=OneWay}" />
+					<Run Text="{Binding Materials.Model.InstantBuildMaterials, Mode=OneWay}"
+						 Style="{DynamicResource EmphaticTextElementStyleKey}" />
+                </TextBlock>
+            </Grid>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Row="0"
+						   Grid.Column="1">
+					<Run Text="拥有的花娘数" />
+					<Run Text="{Binding Ships.Count, Mode=OneWay}"
+						 Style="{DynamicResource EmphaticTextElementStyleKey}" />
+					<Run Text="/" />
+					<Run Text="{Binding Knight.Model.MaxCharacterBox, Mode=OneWay}" />
+					<LineBreak />
+					<Run Text="拥有的装备数" />
+					<Run Text="{Binding SlotItems.Count, Mode=OneWay}"
+						 Style="{DynamicResource EmphaticTextElementStyleKey}" />
+					<Run Text="/" />
+					<Run Text="{Binding Knight.Model.MaxCharacterEquipmentBox, Mode=OneWay}" />
+                </TextBlock>
+            </Grid>
+        </StackPanel>
     </Grid>
 </UserControl>
