@@ -12,6 +12,8 @@ namespace FlowerViewer.ViewModels
     {
         public KnightViewModel Knight { get; private set; }
 
+        public VolumeViewModel Volume { get; private set; }
+
         private static MainContentViewModel _Instance = new MainContentViewModel();
         public static MainContentViewModel Instance
         {
@@ -21,15 +23,7 @@ namespace FlowerViewer.ViewModels
         private MainContentViewModel()
         {
             Knight = new KnightViewModel();
-        }
-        public void ToggleMute()
-        {
-            Volume.Instance().ToggleMute();
-        }
-
-        public bool IsMute
-        {
-            get { return Volume.Instance().IsMute; }
+            Volume = new VolumeViewModel();
         }
     }
 }

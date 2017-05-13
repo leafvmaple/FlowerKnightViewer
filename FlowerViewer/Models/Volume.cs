@@ -17,21 +17,6 @@ namespace FlowerViewer.Models
         private IAudioSessionControl _SessionControl;
         private static Volume        _Volume;
 
-        private bool _IsMute;
-
-        public bool IsMute
-        {
-            get { return this._IsMute; }
-            private set
-            {
-                if (this._IsMute != value)
-                {
-                    this._IsMute = value;
-                    this.RaisePropertyChanged();
-                }
-            }
-        }
-
         public static Volume Instance()
         {
             if (_Volume == null)
@@ -56,22 +41,23 @@ namespace FlowerViewer.Models
                 sessionManager.GetSimpleAudioVolume(Guid.Empty, 0, out simpleAudioVolume);
                 _Volume._SimpleAudioVolume = simpleAudioVolume;
 
-                simpleAudioVolume.GetMute(out _Volume._IsMute);
-
                 sessionManager.GetAudioSessionControl(Guid.Empty, 0, out _Volume._SessionControl);
                 _Volume._SessionControl.RegisterAudioSessionNotification(_Volume);
             }
             return _Volume;
         }
 
-        public void ToggleMute()
+        public void SetMute(bool isMuted)
         {
-            _SimpleAudioVolume.SetMute(!IsMute, Guid.NewGuid());
+            _SimpleAudioVolume.SetMute(isMuted, Guid.NewGuid());
+        }
 
+        public bool GetMute()
+        {
             bool bValue;
             _SimpleAudioVolume.GetMute(out bValue);
 
-            IsMute = bValue;
+            return bValue;
         }
 
         public int OnChannelVolumeChanged(uint channelCount, IntPtr newVolumes, uint channelIndex, ref Guid eventContext)

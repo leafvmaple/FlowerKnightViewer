@@ -37,7 +37,8 @@
             <StackPanel Grid.Column="1"
 						Orientation="Horizontal"
 						Margin="8,0">
-                <metro2:CallMethodButton MethodName="ToggleMute"
+                <metro2:CallMethodButton DataContext="{Binding Volume}"
+                                         MethodName="ToggleMute"
 										 Style="{DynamicResource CircleButtonStyleKey}"
 										 Padding="6">
                     <Viewbox Margin="8">
