@@ -41,7 +41,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reactive.Linq;
 using System.Threading.Tasks;
-using Fiddler;
+using Nekoxy;
 
 namespace FlowerWrapper
 {
@@ -62,7 +62,7 @@ namespace FlowerWrapper
 		/// </summary>
 		public IObservable<Session> <#= name #>
 		{
-			get { return this.ApiSessionSource.Where(x => x.PathAndQuery == "<#= endpoint #>"); }
+			get { return this.ApiSessionSource.Where(x => x.Request.PathAndQuery == "<#= endpoint #>"); }
 		}
 
 <#
@@ -80,7 +80,7 @@ namespace FlowerWrapper
 		/// </summary>
 		public IObservable<Session> <#= name #>
 		{
-			get { return this.ApiSessionSource.Where(x => x.PathAndQuery.StartsWith("<#= endpoint #>")); }
+			get { return this.ApiSessionSource.Where(x => x.Request.PathAndQuery.StartsWith("<#= endpoint #>")); }
 		}
 
 <#

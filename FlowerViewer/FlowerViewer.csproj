@@ -60,6 +60,9 @@
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
+    <Reference Include="Vannatech.CoreAudio">
+      <HintPath>..\Assemblies\Vannatech.CoreAudio.dll</HintPath>
+    </Reference>
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
@@ -75,6 +78,7 @@
     <Compile Include="Models\ProxySettings.cs" />
     <Compile Include="Models\ResourceService.cs" />
     <Compile Include="Models\Settings.cs" />
+    <Compile Include="Models\Volume.cs" />
     <Compile Include="ViewModels\KnightViewModel.cs" />
     <Compile Include="ViewModels\MainContentViewModel.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />

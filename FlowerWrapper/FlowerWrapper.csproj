@@ -98,8 +98,6 @@
     <Compile Include="Models\Raw\fkapi_raid_boss.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Interface\ProxyType.cs" />
-    <Compile Include="Win32\INTERNET_PROXY_INFO.cs" />
-    <Compile Include="Win32\NativeMethods.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="FlowerProxy.Endpoints.tt">

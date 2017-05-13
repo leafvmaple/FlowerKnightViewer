@@ -1,4 +1,5 @@
-﻿using Livet;
+﻿using FlowerViewer.Models;
+using Livet;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,6 +21,15 @@ namespace FlowerViewer.ViewModels
         private MainContentViewModel()
         {
             Knight = new KnightViewModel();
+        }
+        public void ToggleMute()
+        {
+            Volume.Instance().ToggleMute();
+        }
+
+        public bool IsMute
+        {
+            get { return Volume.Instance().IsMute; }
         }
     }
 }
