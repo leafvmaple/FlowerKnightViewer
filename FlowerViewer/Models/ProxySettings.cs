@@ -11,150 +11,114 @@ namespace FlowerViewer.Models
 {
     public class ProxySettings : NotificationObject, IProxySettings
     {
-        #region IsEnabled 変更通知
-        private bool _IsEnabled;
-
-        public bool IsEnabled
+        private string _FtpHost = "127.0.0.1";
+        public string FtpHost
         {
-            get { return this._IsEnabled; }
+            get { return _FtpHost; }
             set
             {
-                if (this._IsEnabled != value)
-                {
-                    this._IsEnabled = value;
-                    this.RaisePropertyChanged();
-                }
+                _FtpHost = value;
+                this.RaisePropertyChanged();
             }
         }
 
-        #endregion
-
-        #region IsEnabledOnSSL 変更通知
-
-        private bool _IsEnabledOnSSL;
-
-        public bool IsEnabledOnSSL
+        private ushort _FtpPort = 8099;
+        public ushort FtpPort
         {
-            get { return this._IsEnabledOnSSL; }
+            get { return _FtpPort; }
             set
             {
-                if (this._IsEnabledOnSSL != value)
-                {
-                    this._IsEnabledOnSSL = value;
-                    this.RaisePropertyChanged();
-                }
+                _FtpPort = value;
+                this.RaisePropertyChanged();
             }
         }
 
-        #endregion
-
-        #region Host 変更通知
-
-        private string _Host;
-
-        [XmlElement(ElementName = "ProxyHost")]
-        public string Host
+        private string _HttpHost = "127.0.0.1";
+        public string HttpHost
         {
-            get { return this._Host; }
+            get { return _HttpHost; }
             set
             {
-                if (this._Host != value)
-                {
-                    this._Host = value;
-                    this.RaisePropertyChanged();
-                }
+                _HttpHost = value;
+                this.RaisePropertyChanged();
             }
         }
 
-        #endregion
-
-        #region Port 変更通知
-
-        private ushort _Port;
-
-        public ushort Port
+        private ushort _HttpPort = 8099;
+        public ushort HttpPort
         {
-            get { return this._Port; }
+            get { return _HttpPort; }
             set
             {
-                if (this._Port != value)
-                {
-                    this._Port = value;
-                    this.RaisePropertyChanged();
-                }
+                _HttpPort = value;
+                this.RaisePropertyChanged();
             }
         }
 
-        #endregion
-
-        #region IsAuthRequired 変更通知
-
-        private bool _IsAuthRequired;
-
-        public bool IsAuthRequired
+        private string _HttpsHost = "127.0.0.1";
+        public string HttpsHost
         {
-            get { return this._IsAuthRequired; }
+            get { return _HttpsHost; }
             set
             {
-                if (this._IsAuthRequired != value)
-                {
-                    this._IsAuthRequired = value;
-                    this.RaisePropertyChanged();
-                }
+                _HttpsHost = value;
+                this.RaisePropertyChanged();
             }
         }
 
-        #endregion
-
-        #region Username 変更通知
-
-        private string _Username;
-
-        public string Username
+        private ushort _HttpsPort = 8099;
+        public ushort HttpsPort
         {
-            get { return this._Username; }
+            get { return _HttpsPort; }
             set
             {
-                if (this._Username != value)
-                {
-                    this._Username = value;
-                    this.RaisePropertyChanged();
-                }
+                _HttpsPort = value;
+                this.RaisePropertyChanged();
             }
         }
 
-        #endregion
-
-        #region Password 変更通知
-
-        private const string passwordForEncryption = "4629A16F-C815-4307-B367-9C16FAC0A52F";
-
-        [XmlIgnore]
-        public string Password
+        private bool _IsUseHttpProxyForAllProtocols = true;
+        public bool IsUseHttpProxyForAllProtocols
         {
-            get { return Helper.DecryptString(this.ProtectedPassword, passwordForEncryption); }
-            set { this.ProtectedPassword = Helper.EncryptString(value, passwordForEncryption); }
-        }
-
-        #endregion
-
-        #region ProtectedPassword 変更通知
-
-        private string _ProtectedPassword;
-
-        public string ProtectedPassword
-        {
-            get { return this._ProtectedPassword; }
+            get { return _IsUseHttpProxyForAllProtocols; }
             set
             {
-                if (this._ProtectedPassword != value)
-                {
-                    this._ProtectedPassword = value;
-                    this.RaisePropertyChanged();
-                }
+                _IsUseHttpProxyForAllProtocols = value;
+                this.RaisePropertyChanged();
             }
         }
 
-        #endregion
+        private string _SocksHost = "127.0.0.1";
+        public string SocksHost
+        {
+            get { return _SocksHost; }
+            set
+            {
+                _SocksHost = value;
+                this.RaisePropertyChanged();
+            }
+        }
+
+        private ushort _SocksPort = 8099;
+        public ushort SocksPort
+        {
+            get { return _SocksPort; }
+            set
+            {
+                _SocksPort = value;
+                this.RaisePropertyChanged();
+            }
+        }
+
+        private ProxyType _Type = ProxyType.SpecificProxy;
+        public ProxyType Type
+        {
+            get { return _Type; }
+            set
+            {
+                _Type = value;
+                this.RaisePropertyChanged();
+            }
+        }
     }
 }

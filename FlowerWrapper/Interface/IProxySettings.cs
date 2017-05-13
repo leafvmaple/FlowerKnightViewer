@@ -8,18 +8,24 @@ namespace FlowerWrapper.Interface
 {
     public interface IProxySettings
     {
-        bool IsEnabled { get; set; }
+        ProxyType Type { get; }
 
-        bool IsEnabledOnSSL { get; set; }
+        string HttpHost { get; }
 
-        string Host { get; set; }
+        ushort HttpPort { get; }
 
-        ushort Port { get; set; }
+        string HttpsHost { get; }
 
-        bool IsAuthRequired { get; set; }
+        ushort HttpsPort { get; }
 
-        string Username { get; set; }
+        string FtpHost { get; }
 
-        string Password { get; set; }
+        ushort FtpPort { get; }
+
+        string SocksHost { get; }
+
+        ushort SocksPort { get; }
+
+        bool IsUseHttpProxyForAllProtocols { get; }
     }
 }

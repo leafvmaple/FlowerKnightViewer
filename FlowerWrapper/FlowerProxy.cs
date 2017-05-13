@@ -1,5 +1,4 @@
-﻿using Fiddler;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reactive.Linq;
@@ -13,6 +12,7 @@ using FlowerWrapper.Interface;
 using System.Diagnostics;
 using System.Runtime.Serialization.Json;
 using System.IO;
+using Nekoxy;
 
 namespace FlowerWrapper
 {
@@ -29,20 +29,22 @@ namespace FlowerWrapper
 
         public IProxySettings UpstreamProxySettings { get; set; }
 
+        public int ListeningPort { get; private set; } = 37564;
+
         public FlowerProxy()
         {
             this.compositeDisposable = new LivetCompositeDisposable();
 
             this.connectableSessionSource = Observable
-                .FromEvent<SessionStateHandler, Session>(
-                    action => new SessionStateHandler(action),
-                    h => FiddlerApplication.AfterSessionComplete += h,
-                    h => FiddlerApplication.AfterSessionComplete -= h)
+                .FromEvent<Action<Session>, Session>(
+                    action => action,
+                    h => HttpProxy.AfterSessionComplete += h,
+                    h => HttpProxy.AfterSessionComplete -= h)
                 .Publish();
 
             this.apiSource = this.connectableSessionSource
-                .Where(s => s.PathAndQuery.StartsWith("/api/v1") || s.PathAndQuery.StartsWith("/social/rpc"))
-                .Where(s => s.oResponse.MIMEType.Equals("text/plain") || s.oResponse.MIMEType.Equals("application/json"))
+                .Where(s => s.Request.PathAndQuery.StartsWith("/api/v1") || s.Request.PathAndQuery.StartsWith("/social/rpc"))
+                .Where(s => s.Response.MimeType.Equals("text/plain") || s.Response.MimeType.Equals("application/json"))
             #region .Do(debug)
 #if DEBUG
                 .Do(session =>
@@ -59,58 +61,91 @@ namespace FlowerWrapper
 
         public void Startup(int proxy = 37564)
         {
-            FiddlerApplication.Startup(proxy, FiddlerCoreStartupFlags.ChainToUpstreamGateway);
-            FiddlerApplication.BeforeRequest += this.SetUpstreamProxyHandler;
+            this.ListeningPort = proxy;
 
-            SetIESettings("localhost:" + proxy);
+            HttpProxy.Startup(proxy, false, false);
+            this.ApplyProxySettings();
 
             this.compositeDisposable.Add(this.connectableSessionSource.Connect());
             this.compositeDisposable.Add(this.apiSource.Connect());
         }
 
-        private static void SetIESettings(string proxyUri)
+        public void Shutdown()
         {
-            // ReSharper disable InconsistentNaming
-            const int INTERNET_OPTION_PROXY = 38;
-            const int INTERNET_OPEN_TYPE_PROXY = 3;
-            // ReSharper restore InconsistentNaming
-
-            INTERNET_PROXY_INFO proxyInfo;
-            proxyInfo.dwAccessType = INTERNET_OPEN_TYPE_PROXY;
-            proxyInfo.proxy = Marshal.StringToHGlobalAnsi(proxyUri);
-            proxyInfo.proxyBypass = Marshal.StringToHGlobalAnsi("local");
-
-            var proxyInfoSize = Marshal.SizeOf(proxyInfo);
-            var proxyInfoPtr = Marshal.AllocCoTaskMem(proxyInfoSize);
-            Marshal.StructureToPtr(proxyInfo, proxyInfoPtr, true);
-
-            NativeMethods.InternetSetOption(IntPtr.Zero, INTERNET_OPTION_PROXY, proxyInfoPtr, proxyInfoSize);
+            this.compositeDisposable.Dispose();
+            HttpProxy.Shutdown();
         }
 
-        private void SetUpstreamProxyHandler(Session requestingSession)
+        private void ApplyProxySettings()
         {
-            var settings = this.UpstreamProxySettings;
-            if (settings == null) return;
-
-            var useGateway = !string.IsNullOrEmpty(settings.Host) && settings.IsEnabled;
-            if (!useGateway || (IsSessionSSL(requestingSession) && !settings.IsEnabledOnSSL)) return;
-
-            var gateway = settings.Host.Contains(":")
-                // IPv6 带有冒号，需要加上[]
-                ? string.Format("[{0}]:{1}", settings.Host, settings.Port)
-                : string.Format("{0}:{1}", settings.Host, settings.Port);
-
-            requestingSession["X-OverrideGateway"] = gateway;
+            this.ApplyUpstreamProxySettings();
+            this.ApplyDownstreamProxySettings();
         }
 
-        internal static bool IsSessionSSL(Session session)
+        private void ApplyUpstreamProxySettings()
         {
-            // 「http://www.dmm.com:433/」の場合もあり、これは Session.isHTTPS では判定できない
-            return session.isHTTPS || session.fullUrl.StartsWith("https:") || session.fullUrl.Contains(":443");
+            switch (this.UpstreamProxySettings?.Type)
+            {
+                case ProxyType.DirectAccess:
+                    HttpProxy.UpstreamProxyConfig = new ProxyConfig(ProxyConfigType.DirectAccess);
+                    break;
+                case ProxyType.SystemProxy:
+                    HttpProxy.UpstreamProxyConfig = new ProxyConfig(ProxyConfigType.SystemProxy);
+                    break;
+                case ProxyType.SpecificProxy:
+                    HttpProxy.UpstreamProxyConfig = new ProxyConfig(ProxyConfigType.SpecificProxy, this.UpstreamProxySettings.HttpHost, this.UpstreamProxySettings.HttpPort);
+                    break;
+                default:
+                    HttpProxy.UpstreamProxyConfig = new ProxyConfig(ProxyConfigType.SystemProxy);
+                    break;
+            }
+        }
+
+        private void ApplyDownstreamProxySettings()
+        {
+            var config = HttpProxy.UpstreamProxyConfig;
+            switch (config.Type)
+            {
+                case ProxyConfigType.SystemProxy:
+                    WinInetUtil.SetProxyInProcessForNekoxy(this.ListeningPort);
+                    break;
+                case ProxyConfigType.SpecificProxy:
+                    if (!string.IsNullOrWhiteSpace(config.SpecificProxyHost))
+                    {
+                        if (this.UpstreamProxySettings.IsUseHttpProxyForAllProtocols)
+                        {
+                            WinInetUtil.SetProxyInProcess(
+                                $"http=127.0.0.1:{this.ListeningPort};"
+                                + $"https={this.UpstreamProxySettings.HttpHost}:{this.UpstreamProxySettings.HttpPort};"
+                                + $"ftp={this.UpstreamProxySettings.HttpHost}:{this.UpstreamProxySettings.HttpPort};"
+                                , "local");
+                        }
+                        else
+                        {
+                            WinInetUtil.SetProxyInProcess(
+                                $"http=127.0.0.1:{this.ListeningPort};"
+                                + ((!string.IsNullOrWhiteSpace(this.UpstreamProxySettings.HttpsHost))
+                                    ? $"https={this.UpstreamProxySettings.HttpsHost}:{this.UpstreamProxySettings.HttpsPort};" : string.Empty)
+                                + ((!string.IsNullOrWhiteSpace(this.UpstreamProxySettings.FtpHost))
+                                    ? $"ftp={this.UpstreamProxySettings.FtpHost}:{this.UpstreamProxySettings.FtpPort};" : string.Empty)
+                                + ((!string.IsNullOrWhiteSpace(this.UpstreamProxySettings.SocksHost))
+                                    ? $"socks={this.UpstreamProxySettings.SocksHost}:{this.UpstreamProxySettings.SocksPort};" : string.Empty)
+                                , "local");
+                        }
+                    }
+                    else
+                    {
+                        WinInetUtil.SetProxyInProcess($"http=127.0.0.1:{this.ListeningPort}", "local");
+                    }
+                    break;
+                case ProxyConfigType.DirectAccess:
+                    WinInetUtil.SetProxyInProcess($"http=127.0.0.1:{this.ListeningPort}", "local");
+                    break;
+            }
         }
         public static bool Parse<T>(Session session, out T result) where T : class
         {
-            var bytes = Encoding.UTF8.GetBytes(session.GetResponseBodyAsString());
+            var bytes = Encoding.UTF8.GetBytes(session.Response.BodyAsString);
             var serializer = new DataContractJsonSerializer(typeof(T));
             using (var stream = new MemoryStream(bytes))
             {

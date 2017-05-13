@@ -40,8 +40,8 @@ namespace FlowerViewer
             Helper.SetMMCSSTask();
 
             Settings.Load();
-            FlowerClient.Current.Proxy.Startup(AppSettings.Default.LocalProxyPort);
             FlowerClient.Current.Proxy.UpstreamProxySettings = Settings.Current.ProxySettings;
+            FlowerClient.Current.Proxy.Startup(AppSettings.Default.LocalProxyPort);
 
             //DispatcherHelper.UIDispatcher = this.Dispatcher;
             ProductInfo = new ProductInfo();

@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reactive.Linq;
 using System.Threading.Tasks;
-using Fiddler;
+using Nekoxy;
 
 namespace FlowerWrapper
 {
@@ -17,7 +17,7 @@ namespace FlowerWrapper
 		/// </summary>
 		public IObservable<Session> api_user_login
 		{
-			get { return this.ApiSessionSource.Where(x => x.PathAndQuery == "/api/v1/user/login"); }
+			get { return this.ApiSessionSource.Where(x => x.Request.PathAndQuery == "/api/v1/user/login"); }
 		}
 
 		/// <summary>
@@ -25,7 +25,7 @@ namespace FlowerWrapper
 		/// </summary>
 		public IObservable<Session> api_master_getMaster
 		{
-			get { return this.ApiSessionSource.Where(x => x.PathAndQuery == "/api/v1/master/getMaster"); }
+			get { return this.ApiSessionSource.Where(x => x.Request.PathAndQuery == "/api/v1/master/getMaster"); }
 		}
 
 		/// <summary>
@@ -33,7 +33,7 @@ namespace FlowerWrapper
 		/// </summary>
 		public IObservable<Session> api_config_getNews
 		{
-			get { return this.ApiSessionSource.Where(x => x.PathAndQuery == "/api/v1/config/getNews"); }
+			get { return this.ApiSessionSource.Where(x => x.Request.PathAndQuery == "/api/v1/config/getNews"); }
 		}
 
 		/// <summary>
@@ -41,7 +41,7 @@ namespace FlowerWrapper
 		/// </summary>
 		public IObservable<Session> api_friend_getFriendAcceptList
 		{
-			get { return this.ApiSessionSource.Where(x => x.PathAndQuery == "/api/v1/friend/getFriendAcceptList"); }
+			get { return this.ApiSessionSource.Where(x => x.Request.PathAndQuery == "/api/v1/friend/getFriendAcceptList"); }
 		}
 
 		/// <summary>
@@ -49,7 +49,7 @@ namespace FlowerWrapper
 		/// </summary>
 		public IObservable<Session> api_present_getPresentBoxList
 		{
-			get { return this.ApiSessionSource.Where(x => x.PathAndQuery == "/api/v1/present/getPresentBoxList"); }
+			get { return this.ApiSessionSource.Where(x => x.Request.PathAndQuery == "/api/v1/present/getPresentBoxList"); }
 		}
 
 		/// <summary>
@@ -57,7 +57,7 @@ namespace FlowerWrapper
 		/// </summary>
 		public IObservable<Session> api_friend_getFriendList
 		{
-			get { return this.ApiSessionSource.Where(x => x.PathAndQuery == "/api/v1/friend/getFriendList"); }
+			get { return this.ApiSessionSource.Where(x => x.Request.PathAndQuery == "/api/v1/friend/getFriendList"); }
 		}
 
 		/// <summary>
@@ -65,7 +65,7 @@ namespace FlowerWrapper
 		/// </summary>
 		public IObservable<Session> api_raidBoss_getRaidBossList
 		{
-			get { return this.ApiSessionSource.Where(x => x.PathAndQuery == "/api/v1/raidBoss/getRaidBossList"); }
+			get { return this.ApiSessionSource.Where(x => x.Request.PathAndQuery == "/api/v1/raidBoss/getRaidBossList"); }
 		}
 
 		/// <summary>
@@ -73,7 +73,7 @@ namespace FlowerWrapper
 		/// </summary>
 		public IObservable<Session> api_character_getBook
 		{
-			get { return this.ApiSessionSource.Where(x => x.PathAndQuery == "/api/v1/character/getBook"); }
+			get { return this.ApiSessionSource.Where(x => x.Request.PathAndQuery == "/api/v1/character/getBook"); }
 		}
 
 		/// <summary>
@@ -81,7 +81,7 @@ namespace FlowerWrapper
 		/// </summary>
 		public IObservable<Session> api_character_saveParty
 		{
-			get { return this.ApiSessionSource.Where(x => x.PathAndQuery == "/api/v1/character/saveParty"); }
+			get { return this.ApiSessionSource.Where(x => x.Request.PathAndQuery == "/api/v1/character/saveParty"); }
 		}
 
 		/// <summary>
@@ -89,7 +89,7 @@ namespace FlowerWrapper
 		/// </summary>
 		public IObservable<Session> api_dungeon_getEventDungeonList
 		{
-			get { return this.ApiSessionSource.Where(x => x.PathAndQuery == "/api/v1/dungeon/getEventDungeonList"); }
+			get { return this.ApiSessionSource.Where(x => x.Request.PathAndQuery == "/api/v1/dungeon/getEventDungeonList"); }
 		}
 
 		/// <summary>
@@ -97,7 +97,7 @@ namespace FlowerWrapper
 		/// </summary>
 		public IObservable<Session> api_dungeon_getEncounterDungeonList
 		{
-			get { return this.ApiSessionSource.Where(x => x.PathAndQuery == "/api/v1/dungeon/getEncounterDungeonList"); }
+			get { return this.ApiSessionSource.Where(x => x.Request.PathAndQuery == "/api/v1/dungeon/getEncounterDungeonList"); }
 		}
 
 		/// <summary>
@@ -105,7 +105,7 @@ namespace FlowerWrapper
 		/// </summary>
 		public IObservable<Session> api_story_getStoryList
 		{
-			get { return this.ApiSessionSource.Where(x => x.PathAndQuery == "/api/v1/story/getStoryList"); }
+			get { return this.ApiSessionSource.Where(x => x.Request.PathAndQuery == "/api/v1/story/getStoryList"); }
 		}
 
 		/// <summary>
@@ -113,7 +113,7 @@ namespace FlowerWrapper
 		/// </summary>
 		public IObservable<Session> api_event_getEventDetail
 		{
-			get { return this.ApiSessionSource.Where(x => x.PathAndQuery == "/api/v1/event/getEventDetail"); }
+			get { return this.ApiSessionSource.Where(x => x.Request.PathAndQuery == "/api/v1/event/getEventDetail"); }
 		}
 
 		/// <summary>
@@ -121,7 +121,7 @@ namespace FlowerWrapper
 		/// </summary>
 		public IObservable<Session> api_gacha_getGachaSchedule
 		{
-			get { return this.ApiSessionSource.Where(x => x.PathAndQuery == "/api/v1/gacha/getGachaSchedule"); }
+			get { return this.ApiSessionSource.Where(x => x.Request.PathAndQuery == "/api/v1/gacha/getGachaSchedule"); }
 		}
 
 		/// <summary>
@@ -129,7 +129,7 @@ namespace FlowerWrapper
 		/// </summary>
 		public IObservable<Session> api_boxGacha_getBoxGachaSchedule
 		{
-			get { return this.ApiSessionSource.Where(x => x.PathAndQuery == "/api/v1/boxGacha/getBoxGachaSchedule"); }
+			get { return this.ApiSessionSource.Where(x => x.Request.PathAndQuery == "/api/v1/boxGacha/getBoxGachaSchedule"); }
 		}
 
 		/// <summary>
@@ -137,7 +137,7 @@ namespace FlowerWrapper
 		/// </summary>
 		public IObservable<Session> api_exchange_getExchangeList
 		{
-			get { return this.ApiSessionSource.Where(x => x.PathAndQuery == "/api/v1/exchange/getExchangeList"); }
+			get { return this.ApiSessionSource.Where(x => x.Request.PathAndQuery == "/api/v1/exchange/getExchangeList"); }
 		}
 
 		/// <summary>
@@ -145,7 +145,7 @@ namespace FlowerWrapper
 		/// </summary>
 		public IObservable<Session> api_campaignSerial_getCampaignSerialSchedule
 		{
-			get { return this.ApiSessionSource.Where(x => x.PathAndQuery == "/api/v1/campaignSerial/getCampaignSerialSchedule"); }
+			get { return this.ApiSessionSource.Where(x => x.Request.PathAndQuery == "/api/v1/campaignSerial/getCampaignSerialSchedule"); }
 		}
 
 		/// <summary>
@@ -153,7 +153,7 @@ namespace FlowerWrapper
 		/// </summary>
 		public IObservable<Session> api_mission_setPanelMissionStatus
 		{
-			get { return this.ApiSessionSource.Where(x => x.PathAndQuery == "/api/v1/mission/setPanelMissionStatus"); }
+			get { return this.ApiSessionSource.Where(x => x.Request.PathAndQuery == "/api/v1/mission/setPanelMissionStatus"); }
 		}
 
 		/// <summary>
@@ -161,7 +161,7 @@ namespace FlowerWrapper
 		/// </summary>
 		public IObservable<Session> dmm_social_rpc
 		{
-			get { return this.ApiSessionSource.Where(x => x.PathAndQuery.StartsWith("/social/rpc")); }
+			get { return this.ApiSessionSource.Where(x => x.Request.PathAndQuery.StartsWith("/social/rpc")); }
 		}
 
 	}

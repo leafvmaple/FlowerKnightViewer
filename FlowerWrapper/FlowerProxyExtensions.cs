@@ -1,4 +1,4 @@
-﻿using Fiddler;
+﻿using Nekoxy;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -44,7 +44,7 @@ namespace FlowerWrapper
         }
         public static T Parse<T>(Session session) where T : class
         {
-            var bytes = Encoding.UTF8.GetBytes(session.GetResponseBodyAsString());
+            var bytes = Encoding.UTF8.GetBytes(session.Response.BodyAsString);
             Debug.WriteLine(bytes);
             var serializer = new DataContractJsonSerializer(typeof(T));
             using (var stream = new MemoryStream(bytes))
