@@ -143,15 +143,5 @@ namespace FlowerWrapper
                     break;
             }
         }
-        public static bool Parse<T>(Session session, out T result) where T : class
-        {
-            var bytes = Encoding.UTF8.GetBytes(session.Response.BodyAsString);
-            var serializer = new DataContractJsonSerializer(typeof(T));
-            using (var stream = new MemoryStream(bytes))
-            {
-                result = serializer.ReadObject(stream) as T;
-                return true;
-            }
-        }
     }
 }

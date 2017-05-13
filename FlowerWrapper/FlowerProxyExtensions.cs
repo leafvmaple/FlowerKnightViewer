@@ -1,4 +1,5 @@
 ﻿using Nekoxy;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -8,6 +9,7 @@ using System.Reactive.Linq;
 using System.Runtime.Serialization.Json;
 using System.Text;
 using System.Threading.Tasks;
+using zlib;
 
 namespace FlowerWrapper
 {
@@ -44,14 +46,31 @@ namespace FlowerWrapper
         }
         public static T Parse<T>(Session session) where T : class
         {
-            var bytes = Encoding.UTF8.GetBytes(session.Response.BodyAsString);
-            Debug.WriteLine(bytes);
+            var byJson = (session.Request.PathAndQuery.IndexOf("/api/v1/") != -1) ? DecryptData(session.Response.Body) : session.Response.Body;
+            Debug.WriteLine(byJson);
             var serializer = new DataContractJsonSerializer(typeof(T));
-            using (var stream = new MemoryStream(bytes))
+            using (var stream = new MemoryStream(byJson))
             {
                 var result = serializer.ReadObject(stream) as T;
                 return result;
             }
+        }
+
+        public static byte[] DecryptData(byte[] bytes)
+        {
+            var stream  = new MemoryStream();
+            var zStream = new ZOutputStream(stream);
+            zStream.Write(bytes, 0, bytes.Length);
+            zStream.Flush();
+
+            bytes = new byte[stream.Length];
+            stream.Position = 0;
+            stream.Read(bytes, 0, bytes.Length);
+            stream.Close();
+            zStream.finish();
+            zStream.Close();
+
+            return Convert.FromBase64String(Encoding.UTF8.GetString(bytes));
         }
     }
 }
