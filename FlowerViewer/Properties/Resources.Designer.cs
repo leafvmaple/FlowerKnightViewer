@@ -59,5 +59,14 @@ namespace FlowerViewer.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   查找类似 自动战斗 的本地化字符串。
+        /// </summary>
+        public static string Tools_Auto_Battle {
+            get {
+                return ResourceManager.GetString("Tools_Auto_Battle", resourceCulture);
+            }
+        }
     }
 }

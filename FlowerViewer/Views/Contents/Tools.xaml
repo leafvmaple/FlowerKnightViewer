@@ -1,0 +1,17 @@
+﻿<UserControl x:Class="FlowerViewer.Views.Contents.Tools"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:FlowerViewer.Views.Contents"
+             xmlns:vm="clr-namespace:FlowerViewer.ViewModels"
+             xmlns:vmContents="clr-namespace:FlowerViewer.ViewModels.Contents"
+             xmlns:models="clr-namespace:FlowerViewer.Models"
+             mc:Ignorable="d"
+             d:DesignWidth="650"
+             d:DesignHeight="400"
+             d:DataContext="{d:DesignInstance vmContents:ToolsViewModel}">
+    <CheckBox Margin="8,6"
+              Content="{Binding Resources.Tools_Auto_Battle, Source={x:Static models:ResourceService.Current}, Mode=OneWay}"
+              IsChecked="{Binding Source={x:Static models:Settings.Current}, Path=IsAutoBattle, Mode=TwoWay}" />
+</UserControl>

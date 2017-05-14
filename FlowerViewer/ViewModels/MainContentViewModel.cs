@@ -14,6 +14,8 @@ namespace FlowerViewer.ViewModels
 
         public VolumeViewModel Volume { get; private set; }
 
+        public InformationViewModel Information { get; private set; }
+
         private static MainContentViewModel _Instance = new MainContentViewModel();
         public static MainContentViewModel Instance
         {
@@ -24,6 +26,7 @@ namespace FlowerViewer.ViewModels
         {
             Knight = new KnightViewModel();
             Volume = new VolumeViewModel();
+            Information = new InformationViewModel();
         }
     }
 }

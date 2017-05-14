@@ -15,9 +15,6 @@ namespace FlowerWrapper
 {
     public static class FlowerProxyExtensions
     {
-        /// <summary>
-		/// FiddlerCore 数据解析
-		/// </summary>
 		public static IObservable<T> TryParse<T>(this IObservable<Session> source) where T : class
         {
             Func<Session, T> converter = session =>

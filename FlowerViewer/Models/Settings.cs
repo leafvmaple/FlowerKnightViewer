@@ -28,13 +28,8 @@ namespace FlowerViewer.Models
             Current = GetInitialSettings();
         }
 
-        #region TopMost 変更通知
-
         private bool _TopMost;
 
-        /// <summary>
-        /// 窗口是否始终在最前。
-        /// </summary>
         public bool TopMost
         {
             get { return this._TopMost; }
@@ -48,16 +43,12 @@ namespace FlowerViewer.Models
             }
         }
 
-        #endregion
-
         public static Settings GetInitialSettings()
         {
             return new Settings
             {
             };
         }
-
-        #region ProxySettings 変更通知
 
         private ProxySettings _ProxySettings;
 
@@ -74,15 +65,8 @@ namespace FlowerViewer.Models
             }
         }
 
-        #endregion
-
-        #region Culture 変更通知
-
         private string _Culture;
 
-        /// <summary>
-        /// 获取设定语言
-        /// </summary>
         public string Culture
         {
             get { return this._Culture; }
@@ -96,6 +80,19 @@ namespace FlowerViewer.Models
             }
         }
 
-        #endregion
+        private bool _IsAutoBattle;
+
+        public bool IsAutoBattile
+        {
+            get { return this._IsAutoBattle; }
+            set
+            {
+                if (this._IsAutoBattle != value)
+                {
+                    this._IsAutoBattle = value;
+                    this.RaisePropertyChanged();
+                }
+            }
+        }
     }
 }

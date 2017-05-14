@@ -73,5 +73,14 @@
                 </metro2:CallMethodButton>
             </StackPanel>
         </Grid>
+
+        <ContentControl Grid.Row="1"
+						Content="{Binding Information}">
+            <ContentControl.Resources>
+                <DataTemplate DataType="{x:Type vm:InformationViewModel}">
+                    <views:Information />
+                </DataTemplate>
+            </ContentControl.Resources>
+        </ContentControl>
     </Grid>
 </UserControl>
