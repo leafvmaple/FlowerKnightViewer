@@ -97,7 +97,6 @@
     <Compile Include="Models\Settings.cs" />
     <Compile Include="Models\Volume.cs" />
     <Compile Include="ViewModels\Contents\ToolsViewModel.cs" />
-    <Compile Include="ViewModels\InformationViewModel.cs" />
     <Compile Include="ViewModels\KnightViewModel.cs" />
     <Compile Include="ViewModels\MainContentViewModel.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
@@ -115,9 +114,6 @@
     </Compile>
     <Compile Include="Views\Contents\Tools.xaml.cs">
       <DependentUpon>Tools.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Information.xaml.cs">
-      <DependentUpon>Information.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\MainContent.xaml.cs">
       <DependentUpon>MainContent.xaml</DependentUpon>
@@ -144,10 +140,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Contents\Tools.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\Information.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -12,7 +12,21 @@ namespace FlowerViewer.ViewModels
     public abstract class TabItemViewModel : ViewModel
     {
         public abstract string Name { get; protected set; }
-        bool IsSelected { get; set; }
+
+        private bool _IsSelected;
+
+        public  bool IsSelected
+        {
+            get { return this._IsSelected; }
+            set
+            {
+                if (this._IsSelected != value)
+                {
+                    this._IsSelected = value;
+                    this.RaisePropertyChanged();
+                }
+            }
+        }
 
         private int? _Badge;
 

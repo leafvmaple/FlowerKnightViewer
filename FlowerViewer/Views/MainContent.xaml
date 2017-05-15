@@ -14,6 +14,7 @@
 			 xmlns:views="clr-namespace:FlowerViewer.Views"
 			 xmlns:contents="clr-namespace:FlowerViewer.Views.Contents"
 			 xmlns:vm="clr-namespace:FlowerViewer.ViewModels"
+             xmlns:vmContents="clr-namespace:FlowerViewer.ViewModels.Contents"
 			 mc:Ignorable="d"
 			 d:DesignWidth="800"
 			 d:DesignHeight="400"
@@ -74,13 +75,94 @@
             </StackPanel>
         </Grid>
 
-        <ContentControl Grid.Row="1"
-						Content="{Binding Information}">
-            <ContentControl.Resources>
-                <DataTemplate DataType="{x:Type vm:InformationViewModel}">
-                    <views:Information />
-                </DataTemplate>
-            </ContentControl.Resources>
-        </ContentControl>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <ScrollViewer VerticalScrollBarVisibility="Auto"
+						  PanningMode="Both">
+                <Grid MinWidth="90"
+					  Background="{DynamicResource ActiveBackgroundBrushKey}">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+
+                    <metro:TabView ItemsSource="{Binding TabItems}"
+								   SelectedValue="{Binding SelectedItem}" />
+
+                    <Rectangle Grid.Row="1"
+							   Height="1"
+							   Margin="20,10"
+							   Fill="{DynamicResource InactiveForegroundBrushKey}"
+							   Opacity="0.5" />
+
+                    <metro:TabView Grid.Row="2"
+								   ItemsSource="{Binding SystemTabItems}"
+								   SelectedValue="{Binding SelectedItem}"
+								   Margin="0,0,0,20" />
+                </Grid>
+            </ScrollViewer>
+
+            <Grid Grid.Column="1">
+                <ItemsControl ItemsSource="{Binding TabItems}">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <Grid />
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate DataType="{x:Type vm:TabItemViewModel}">
+                            <ContentControl Content="{Binding}"
+											Visibility="{Binding IsSelected, Converter={StaticResource BooleanToVisibilityConverter}}" />
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+
+                <ItemsControl ItemsSource="{Binding SystemTabItems}">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <Grid />
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate DataType="{x:Type vm:TabItemViewModel}">
+                            <ContentControl Content="{Binding}"
+											Visibility="{Binding IsSelected, Converter={StaticResource BooleanToVisibilityConverter}}" />
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+
+                <Grid.Resources>
+                    <!--<DataTemplate DataType="{x:Type vmContents:OverviewViewModel}">
+                        <contents:Overview />
+                    </DataTemplate>
+                    <DataTemplate DataType="{x:Type vmFleets:FleetsViewModel}">
+                        <contents:Fleets />
+                    </DataTemplate>
+                    <DataTemplate DataType="{x:Type vmContents:ShipyardViewModel}">
+                        <contents:Shipyard />
+                    </DataTemplate>
+                    <DataTemplate DataType="{x:Type vmContents:QuestsViewModel}">
+                        <contents:Quests />
+                    </DataTemplate>
+                    <DataTemplate DataType="{x:Type vmContents:ExpeditionsViewModel}">
+                        <contents:Expeditions />
+                    </DataTemplate>-->
+                    <DataTemplate DataType="{x:Type vmContents:ToolsViewModel}">
+                        <contents:Tools />
+                    </DataTemplate>
+                    <!--<DataTemplate DataType="{x:Type vm:SettingsViewModel}">
+                        <settings:Settings />
+                    </DataTemplate>
+                    <DataTemplate DataType="{x:Type devVm:DebugTabViewModel}">
+                        <dev:DebugTab />
+                    </DataTemplate> -->
+                </Grid.Resources>
+            </Grid>
+        </Grid>
     </Grid>
 </UserControl>
