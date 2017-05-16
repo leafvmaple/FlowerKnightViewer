@@ -155,10 +155,10 @@
                     <DataTemplate DataType="{x:Type vmContents:ToolsViewModel}">
                         <contents:Tools />
                     </DataTemplate>
-                    <!--<DataTemplate DataType="{x:Type vm:SettingsViewModel}">
-                        <settings:Settings />
+                    <DataTemplate DataType="{x:Type vmContents:SettingsViewModel}">
+                        <contents:Settings />
                     </DataTemplate>
-                    <DataTemplate DataType="{x:Type devVm:DebugTabViewModel}">
+                    <!--<DataTemplate DataType="{x:Type devVm:DebugTabViewModel}">
                         <dev:DebugTab />
                     </DataTemplate> -->
                 </Grid.Resources>

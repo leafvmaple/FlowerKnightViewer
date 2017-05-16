@@ -101,6 +101,7 @@
     <Compile Include="ViewModels\MainContentViewModel.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
     <Compile Include="ViewModels\NavigatorViewModel.cs" />
+    <Compile Include="ViewModels\Contents\SettingsViewModel.cs" />
     <Compile Include="ViewModels\StartContentViewModel.cs" />
     <Compile Include="ViewModels\TabItemViewModel.cs" />
     <Compile Include="ViewModels\VolumeViewModel.cs" />
@@ -112,15 +113,29 @@
     <Compile Include="Views\Contents\Garden.xaml.cs">
       <DependentUpon>Garden.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Contents\Settings.xaml.cs">
+      <DependentUpon>Settings.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Contents\Tools.xaml.cs">
       <DependentUpon>Tools.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\MainContent.xaml.cs">
       <DependentUpon>MainContent.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Settings\Network.xaml.cs">
+      <DependentUpon>Network.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Win32\INTERNET_CACHE_ENTRY_INFOA.cs" />
     <Compile Include="Win32\NativeMethods.cs" />
     <Compile Include="Win32\WinInet.cs" />
+    <Page Include="Styles\Common.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\Controls.TabControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Styles\Controls.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -136,6 +151,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Contents\Garden.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Contents\Settings.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -164,6 +183,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\BrowserNavigator.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Settings\Network.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

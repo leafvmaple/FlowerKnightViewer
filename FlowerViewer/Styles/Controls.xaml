@@ -4,6 +4,7 @@
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="pack://application:,,,/FlowerViewer;component/Styles/Controls.HorizontalFlatListBox.xaml" />
         <ResourceDictionary Source="pack://application:,,,/FlowerViewer;component/Styles/Controls.Text.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/FlowerViewer;component/Styles/Controls.TabControl.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
     <Style x:Key="SeparatorRectangleStyleKey"

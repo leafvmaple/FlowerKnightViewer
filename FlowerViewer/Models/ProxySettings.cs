@@ -9,8 +9,21 @@ using Livet;
 
 namespace FlowerViewer.Models
 {
+    [Serializable]
     public class ProxySettings : NotificationObject, IProxySettings
     {
+        private bool _IsEnable = false;
+
+        public bool IsEnable
+        {
+            get { return _IsEnable; }
+            set
+            {
+                _IsEnable = value;
+                this.RaisePropertyChanged();
+            }
+        }
+
         private string _FtpHost = "127.0.0.1";
         public string FtpHost
         {

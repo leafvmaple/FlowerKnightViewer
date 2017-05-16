@@ -117,6 +117,24 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Settings_Network" xml:space="preserve">
+    <value>网络设置</value>
+  </data>
+  <data name="Settings_Proxy" xml:space="preserve">
+    <value>代理设置</value>
+  </data>
+  <data name="Settings_Proxy_Enable" xml:space="preserve">
+    <value>使用代理来连接服务器</value>
+  </data>
+  <data name="Settings_Proxy_Enable_4_SSL" xml:space="preserve">
+    <value>使用SSL时也使用代理服务器</value>
+  </data>
+  <data name="Settings_Proxy_Host" xml:space="preserve">
+    <value>地址</value>
+  </data>
+  <data name="Settings_Proxy_Port" xml:space="preserve">
+    <value>端口</value>
+  </data>
   <data name="Tools_Auto_Battle" xml:space="preserve">
     <value>自动战斗</value>
   </data>

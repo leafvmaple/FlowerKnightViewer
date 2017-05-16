@@ -8,6 +8,7 @@ namespace FlowerWrapper.Interface
 {
     public interface IProxySettings
     {
+        bool IsEnable { get; }
         ProxyType Type { get; }
 
         string HttpHost { get; }
