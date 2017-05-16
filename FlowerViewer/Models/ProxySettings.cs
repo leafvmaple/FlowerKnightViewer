@@ -22,8 +22,8 @@ namespace FlowerViewer.Models
             }
         }
 
-        private ushort _FtpPort = 8099;
-        public ushort FtpPort
+        private UInt16 _FtpPort = 8099;
+        public UInt16 FtpPort
         {
             get { return _FtpPort; }
             set
@@ -44,8 +44,8 @@ namespace FlowerViewer.Models
             }
         }
 
-        private ushort _HttpPort = 8099;
-        public ushort HttpPort
+        private UInt16 _HttpPort = 8099;
+        public UInt16 HttpPort
         {
             get { return _HttpPort; }
             set
@@ -66,8 +66,8 @@ namespace FlowerViewer.Models
             }
         }
 
-        private ushort _HttpsPort = 8099;
-        public ushort HttpsPort
+        private UInt16 _HttpsPort = 8099;
+        public UInt16 HttpsPort
         {
             get { return _HttpsPort; }
             set
@@ -99,8 +99,8 @@ namespace FlowerViewer.Models
             }
         }
 
-        private ushort _SocksPort = 8099;
-        public ushort SocksPort
+        private UInt16 _SocksPort = 8099;
+        public UInt16 SocksPort
         {
             get { return _SocksPort; }
             set

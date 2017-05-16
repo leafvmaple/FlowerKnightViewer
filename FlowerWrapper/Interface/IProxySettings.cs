@@ -12,19 +12,19 @@ namespace FlowerWrapper.Interface
 
         string HttpHost { get; }
 
-        ushort HttpPort { get; }
+        UInt16 HttpPort { get; }
 
         string HttpsHost { get; }
 
-        ushort HttpsPort { get; }
+        UInt16 HttpsPort { get; }
 
         string FtpHost { get; }
 
-        ushort FtpPort { get; }
+        UInt16 FtpPort { get; }
 
         string SocksHost { get; }
 
-        ushort SocksPort { get; }
+        UInt16 SocksPort { get; }
 
         bool IsUseHttpProxyForAllProtocols { get; }
     }
