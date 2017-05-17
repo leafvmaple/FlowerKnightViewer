@@ -85,11 +85,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Models\Data\Interface\Win32.cs" />
+    <Compile Include="Models\Data\Interface\WinAPI.cs" />
     <Compile Include="Models\Data\Xml\XmlFileReader.cs" />
     <Compile Include="Models\Data\Xml\XmlFileWriter.cs" />
     <Compile Include="Models\Helper.cs" />
     <Compile Include="Models\INavigator.cs" />
+    <Compile Include="Models\Intelligent.cs" />
     <Compile Include="Models\Model.cs" />
     <Compile Include="Models\ProxySettings.cs" />
     <Compile Include="Models\ResourceService.cs" />

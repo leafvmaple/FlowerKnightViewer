@@ -1,5 +1,9 @@
 ﻿using System;
 using System.ComponentModel;
+using FlowerViewer.Views.Contents;
+using System.Text;
+using FlowerViewer.Models;
+using FlowerViewer.Models.Data.Interface;
 
 namespace FlowerViewer.Views
 {
@@ -11,6 +15,7 @@ namespace FlowerViewer.Views
         public MainWindow()
         {
             InitializeComponent();
+            Tools.ClickEvent += BrowerAutoBattle;
         }
 
         protected override void OnClosing(CancelEventArgs e)
@@ -21,6 +26,22 @@ namespace FlowerViewer.Views
             //dialog.Show();
 
             base.OnClosing(e);
+        }
+
+        public void BrowerAutoBattle(Object sender, EventArgs message)
+        {
+            if (Intelligent.Current.WebHandle == IntPtr.Zero)
+            {
+                Intelligent.Current.WebHandle = FlowerWebBrower.Handle;
+                StringBuilder className = new StringBuilder(100);
+                while (className.ToString() != "Internet Explorer_Server")
+                {
+                    Intelligent.Current.WebHandle = WinAPI.GetWindow(Intelligent.Current.WebHandle, 5);
+                    WinAPI.GetClassName(Intelligent.Current.WebHandle, className, className.Capacity);
+                }
+            }
+
+            Intelligent.Current.ToggleAutoBattle(!Models.Settings.Current.IsAutoBattle);
         }
     }
 }

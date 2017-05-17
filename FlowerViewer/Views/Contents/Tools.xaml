@@ -20,6 +20,7 @@
 
         <CheckBox Margin="8,6"
               Content="{Binding Resources.Tools_Auto_Battle, Source={x:Static models:ResourceService.Current}, Mode=OneWay}"
-              IsChecked="{Binding Source={x:Static models:Settings.Current}, Path=IsAutoBattle, Mode=TwoWay}" />
+              IsChecked="{Binding Source={x:Static models:Settings.Current}, Path=IsAutoBattle, Mode=OneWay}"
+              Click="ToggleAutoBattle"/>
     </Grid>
 </UserControl>

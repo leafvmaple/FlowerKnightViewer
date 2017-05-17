@@ -52,7 +52,7 @@ namespace FlowerViewer.Models
         {
             return new Settings
             {
-                IsAutoBattile = false,
+                IsAutoBattle = false,
             };
         }
 
@@ -88,7 +88,7 @@ namespace FlowerViewer.Models
 
         private bool _IsAutoBattle;
 
-        public bool IsAutoBattile
+        public bool IsAutoBattle
         {
             get { return this._IsAutoBattle; }
             set
