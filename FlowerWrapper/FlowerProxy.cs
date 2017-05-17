@@ -83,7 +83,16 @@ namespace FlowerWrapper
 
         private void ApplyUpstreamProxySettings()
         {
-            switch (this.UpstreamProxySettings?.Type)
+            if (UpstreamProxySettings.IsEnable)
+            {
+                HttpProxy.UpstreamProxyConfig = new ProxyConfig(ProxyConfigType.SpecificProxy, this.UpstreamProxySettings.HttpHost, this.UpstreamProxySettings.HttpPort);
+            }
+            else
+            {
+                HttpProxy.UpstreamProxyConfig = new ProxyConfig(ProxyConfigType.DirectAccess);
+            }
+
+            /*switch (this.UpstreamProxySettings?.Type)
             {
                 case ProxyType.DirectAccess:
                     HttpProxy.UpstreamProxyConfig = new ProxyConfig(ProxyConfigType.DirectAccess);
@@ -97,7 +106,7 @@ namespace FlowerWrapper
                 default:
                     HttpProxy.UpstreamProxyConfig = new ProxyConfig(ProxyConfigType.SystemProxy);
                     break;
-            }
+            }*/
         }
 
         private void ApplyDownstreamProxySettings()

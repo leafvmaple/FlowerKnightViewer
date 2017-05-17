@@ -51,7 +51,7 @@ namespace FlowerViewer.ViewModels
             };
             SystemTabItems = new List<TabItemViewModel>
             {
-                //new SettingsViewModel(),
+                new SettingsViewModel(),
 #if DEBUG
 				//new DebugTabViewModel(),
 #endif

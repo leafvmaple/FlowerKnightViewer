@@ -20,9 +20,32 @@ namespace FlowerViewer.Views.Contents
     /// </summary>
     public partial class Tools : UserControl
     {
+        private IntPtr webHandle = IntPtr.Zero;
         public Tools()
         {
             InitializeComponent();
+        }
+
+        private void ToggleAutoBattle()
+        {
+            if (webHandle == IntPtr.Zero)
+            {
+                webHandle = mainWeb.Handle;
+                StringBuilder className = new StringBuilder(100);
+                while (className.ToString() != "Internet Explorer_Server") // 浏览器组件类获取
+                {
+                    webHandle = GetWindow(webHandle, 5); // 获取子窗口的句柄
+                    GetClassName(webHandle, className, className.Capacity);
+                }
+            }
+            if (DataUtil.Game.isAuto)
+            {
+                MiscHelper.SetAutoGo(false);
+            }
+            else if (DataUtil.Game.canAuto)
+            {
+                MiscHelper.SetAutoGo(true);
+            }
         }
     }
 }

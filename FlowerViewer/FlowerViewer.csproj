@@ -54,9 +54,6 @@
     <Reference Include="Livet">
       <HintPath>..\Packages\LivetCask.1.1.0.0\lib\net45\Livet.dll</HintPath>
     </Reference>
-    <Reference Include="Livet.Extensions">
-      <HintPath>..\Packages\LivetExtensions.1.1.0.0\lib\net45\Livet.Extensions.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.Expression.Interactions, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Packages\LivetCask.1.1.0.0\lib\net45\Microsoft.Expression.Interactions.dll</HintPath>
@@ -88,7 +85,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Models\FlowerSettings.cs" />
+    <Compile Include="Models\Data\Interface\Win32.cs" />
+    <Compile Include="Models\Data\Xml\XmlFileReader.cs" />
+    <Compile Include="Models\Data\Xml\XmlFileWriter.cs" />
     <Compile Include="Models\Helper.cs" />
     <Compile Include="Models\INavigator.cs" />
     <Compile Include="Models\Model.cs" />

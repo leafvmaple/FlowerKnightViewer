@@ -12,7 +12,7 @@ namespace FlowerViewer.Models
     [Serializable]
     public class ProxySettings : NotificationObject, IProxySettings
     {
-        private bool _IsEnable = false;
+        private bool _IsEnable;
 
         public bool IsEnable
         {

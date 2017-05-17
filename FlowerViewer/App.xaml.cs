@@ -51,6 +51,14 @@ namespace FlowerViewer
             this.MainWindow.Show();
         }
 
+        protected override void OnExit(ExitEventArgs e)
+        {
+            base.OnExit(e);
+
+            FlowerClient.Current.Proxy.Shutdown();
+            Settings.Current.Save();
+        }
+
         private static void ReportException(object sender, Exception exception)
         {
             #region const

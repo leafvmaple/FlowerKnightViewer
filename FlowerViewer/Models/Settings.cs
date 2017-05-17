@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
+using FlowerViewer.Models.Data.Xml;
 using Livet;
 
 namespace FlowerViewer.Models
@@ -11,21 +12,25 @@ namespace FlowerViewer.Models
     [Serializable]
     public class Settings : NotificationObject
     {
+        private static readonly string _FilePath = Path.Combine(
+            Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
+            "leafvmaple.com",
+            "FlowerViewer",
+            "Settings.xml");
+
         public static Settings Current { get; set; }
 
         public static void Load()
         {
-            //try
-            //{
-            //    Current = filePath.ReadXml<Settings>();
-            //}
-            //catch (Exception ex)
-            //{
-            //    Current = GetInitialSettings();
-            //    System.Diagnostics.Debug.WriteLine(ex);
-            //}
-
-            Current = GetInitialSettings();
+            try
+            {
+                Current = _FilePath.ReadXml<Settings>();
+            }
+            catch (Exception ex)
+            {
+                Current = GetInitialSettings();
+                System.Diagnostics.Debug.WriteLine(ex);
+            }
         }
 
         private bool _TopMost;
@@ -47,6 +52,7 @@ namespace FlowerViewer.Models
         {
             return new Settings
             {
+                IsAutoBattile = false,
             };
         }
 
@@ -92,6 +98,17 @@ namespace FlowerViewer.Models
                     this._IsAutoBattle = value;
                     this.RaisePropertyChanged();
                 }
+            }
+        }
+        public void Save()
+        {
+            try
+            {
+                this.WriteXml(_FilePath);
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine(ex);
             }
         }
     }

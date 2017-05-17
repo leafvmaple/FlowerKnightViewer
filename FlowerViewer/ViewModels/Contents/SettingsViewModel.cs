@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace FlowerViewer.ViewModels.Contents
 {
-    public class SettingsViewModel
+    public class SettingsViewModel : TabItemViewModel
     {
+        public override string Name
+        {
+            get { return "Settings"; }
+
+            protected set { throw new NotImplementedException(); }
+        }
     }
 }

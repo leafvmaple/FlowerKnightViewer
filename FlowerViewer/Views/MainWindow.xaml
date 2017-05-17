@@ -29,7 +29,7 @@
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
 
-            <WebBrowser>
+            <WebBrowser x:Name="FlowerWebBrower">
                 <i:Interaction.Behaviors>
                     <behaviors:NavigatorBehavior Navigator="{Binding Navigator}" />
                     <livet:WebBrowserSetStateToControlBehavior Source="{Binding Source={x:Static properties:Settings.Default}, Path=FlowerUrl, Mode=OneTime}"
